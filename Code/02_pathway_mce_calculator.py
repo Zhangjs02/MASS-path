@@ -13,7 +13,7 @@ import pickle
 from concurrent.futures import ProcessPoolExecutor, as_completed
 import logging
 
-print("通路网络MCE计算程序 (优化版)")
+print("通路网络MCE计算程序")
 
 # 配置日志
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
