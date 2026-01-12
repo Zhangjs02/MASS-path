@@ -130,10 +130,147 @@ Create three-layer network diagram for drugs, genes, and pathways. Main features
 
 ## Usage
 
-All code uses relative paths and should be run from the `Code/` directory:
+Each Figure folder contains paired code and data. Navigate to the corresponding directory to run.
 
-```bash
-cd Code
-python 09_create_tripartite_from_mapping.py
-```
+---
 
+## Folder Description
+
+### base_data/
+**Base Data Files**
+
+| File | Description |
+|------|-------------|
+| `pathway_363_genes.csv` | Gene list for 363 pathways |
+| `expression_485_all_genes.csv` | Full gene expression matrix for 485 samples |
+| `methylation450_485.csv` | Methylation data for 485 samples |
+| `LUAD_cli.csv` | Sample clinical information |
+| `bundle_summary.csv` | Data summary information |
+
+---
+
+### Figure 3_a/
+**Monocle Pseudotime Analysis (Figure 3a)**
+
+| File | Description |
+|------|-------------|
+| `04_nsx_code.R` | Monocle pseudotime analysis code |
+| `LUAD_intersection_genes.csv` | LUAD gene expression matrix (input) |
+| `LUAD_cli.csv` | LUAD clinical information (input) |
+
+**Output:** Trajectory plots (trajectory_by_*.png), pseudotime results table (pseudotime_results.csv)
+
+---
+
+### Figure 3_b/
+**LDA Clustering Plot**
+
+| File | Description |
+|------|-------------|
+| `pseudotime_ordered_table.csv` | Sample pseudotime ordering table (input) |
+
+**Output:** LDA clustering plot
+
+---
+
+### Figure 3_c/
+**Pathway Expression Heatmap (Figure 3c)**
+
+| File | Description |
+|------|-------------|
+| `03_heatmap_script.R` | Heatmap visualization code |
+| `pseudotime_ordered_table.csv` | Sample pseudotime ordering table (input) |
+| `LUAD_pathway_expression.csv.csv` | Pathway expression matrix (input) |
+| `pathway_types.txt` | Pathway type annotation (input) |
+
+**Output:** Heatmap (heatmap_pseudotime_ordered.png/pdf)
+
+---
+
+### Figure 3_d/
+**Survival Analysis (Figure 3d)**
+
+| File | Description |
+|------|-------------|
+| `stage_survival_50_50_fixed.R` | Survival analysis code |
+| `stage2_pre_with_survival.csv` | Sample data with survival information (input) |
+
+**Output:** Kaplan-Meier survival curve
+
+---
+
+### Figure 4/
+**ManiFeSt Feature Selection and Validation (Figure 4)**
+
+| File | Description |
+|------|-------------|
+| `05_run_manifest.py` | ManiFeSt feature selection algorithm |
+| `06_validate_feature_ranking.py` | Feature ranking validation code |
+| `LUAD_1.csv` | Class 1 sample feature matrix (input) |
+| `LUAD_2.csv` | Class 2 sample feature matrix (input) |
+| `manifest_results.csv` | ManiFeSt feature ranking results |
+| `feature_rank_fig4/` | Validation results output directory |
+
+**Output:** Feature ranking comparison curves, validation reports
+
+---
+
+### Figure 4 upset/
+**UpSet Intersection Plot (Figure 4 UpSet)**
+
+| File | Description |
+|------|-------------|
+| `07_create_upset_plot.R` | UpSet plot generation code |
+| `feature_indices_comparison.xlsx` | Feature indices from state comparisons (input) |
+
+**Output:** UpSet plot (upset_plot_R.png), intersection statistics (upset_statistics_R.csv)
+
+---
+
+### Figure 5/
+**Pathway Network Graph (Figure 5)**
+
+| File | Description |
+|------|-------------|
+| `08_plot_pathway_network.py` | Pathway network visualization code |
+| `kegg_pathway_relations_summary.csv` | KEGG pathway relationships (input) |
+| `pathway_types.txt` | Pathway type annotation (input) |
+| `rank.csv` | Pathway ranking (for Top-K highlighting) |
+| `feature_rank_fig5/` | ManiFeSt results directory |
+
+**Output:** Pathway network graph (pathway_network.png/svg)
+
+---
+
+### Figure 6/
+**Drug-Gene-Pathway Tripartite Network (Figure 6)**
+
+| File | Description |
+|------|-------------|
+| `09_create_tripartite_from_mapping.py` | Tripartite network generation code |
+| `H00014_drug_gene_pathway_mapping_merged.csv` | Drug-gene-pathway mapping (input) |
+
+**Output:** Tripartite network graph (tripartite_pathway_gene_drug.png)
+
+---
+
+### supplement_data/
+**Supplementary Data**
+
+| File | Description |
+|------|-------------|
+| `Supplementary_data_1.xlsx` | Pathway network topology features for each sample (485 samples × 731 columns), including sample network nodes/edges and nodes/edges for 363 pathways |
+| `Supplementary_data_2.xlsx` | Pathway MCE ratio matrix for each sample (485 samples × 363 pathways), feature matrix for downstream analysis |
+| `Supplementary_data_3.xlsx` | Differential pathway lists for 6 state comparisons, including pathway ID, type, name, and UpSet intersection statistics |
+
+**Supplementary_data_3.xlsx Details:**
+
+| Sheet | Content |
+|-------|---------|
+| Sheet1 | State1 vs State4 differential pathways (32) |
+| Sheet2 | State1 vs State6 differential pathways (38) |
+| Sheet3 | State1 vs State7 differential pathways (51) |
+| Sheet4 | State4 vs State6 differential pathways (33) |
+| Sheet5 | State4 vs State7 differential pathways (57) |
+| Sheet6 | State6 vs State7 differential pathways (31) |
+| Sheet7 | UpSet intersection statistics across degrees for 6 comparisons |
