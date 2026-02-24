@@ -530,11 +530,11 @@ def main():
     print("通路网络MCE计算程序 (并行优化版)")
     print("=" * 60)
     
-    # 配置路径
-    sample_vectors_base_dir = "/root/autodl-tmp/Sample_LUSC_MCE_Vectors_1"
-    pathways_dir = "/root/autodl-tmp/Final_pathway_LUSC"
-    output_dir = "/root/autodl-tmp/Pathway_MCE_Results_LUSC"
-    sample_mce_file = "/root/autodl-tmp/Sample_LUSC_MCE_Vectors_1/sample_LUSC_mce_summary.csv"
+    # 配置路径（相对路径，相对于Code目录）
+    sample_vectors_base_dir = "../Data/Sample_MCE_Vectors"
+    pathways_dir = "../Data/Final_pathway"
+    output_dir = "../Data/Pathway_MCE_Results"
+    sample_mce_file = "../Data/LUAD_MCE.csv"
     
     # 加载样本MCE数据
     print("加载样本MCE汇总数据...")
