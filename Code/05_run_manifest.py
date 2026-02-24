@@ -4,8 +4,8 @@ import pandas as pd
 import numpy as np
 import cupy as cp
 
-# 添加ELVES模块路径
-sys.path.append('ELVES_/ManiFeSt')
+# 添加ELVES模块路径（相对路径）
+sys.path.append('../Data/ELVES/ManiFeSt')
 from ManiFeSt_gpu import ManiFeSt_gpu
 
 def load_data(file_path):
@@ -16,9 +16,9 @@ def load_data(file_path):
 def main():
     print("运行ManiFeSt特征选择算法...")
     
-    # 加载数据
-    X1, feature_names = load_data('ELVES_/data/LUAD_2/LUAD_1.csv')
-    X2, _ = load_data('ELVES_/data/LUAD_2/LUAD_2.csv')
+    # 加载数据（相对路径，相对于Code目录）
+    X1, feature_names = load_data('../Data/feature_selection/LUAD_1.csv')
+    X2, _ = load_data('../Data/feature_selection/LUAD_2.csv')
     
     # 合并数据并创建标签
     # X1 标签为 0, X2 标签为 1
@@ -56,8 +56,8 @@ def main():
     })
     
     # 保存结果
-    results.to_csv('manifest_results.csv', index=False)
-    print(f"结果已保存到 manifest_results.csv ({len(results)} 个特征)")
+    results.to_csv('../Data/output/manifest_results.csv', index=False)
+    print(f"结果已保存到 ../Data/output/manifest_results.csv ({len(results)} 个特征)")
 
 if __name__ == "__main__":
     main() 
