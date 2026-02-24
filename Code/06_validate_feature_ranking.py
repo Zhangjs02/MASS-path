@@ -19,7 +19,7 @@ plt.rcParams['axes.unicode_minus'] = False
 
 def create_result_directory():
     """创建结果保存目录"""
-    result_dir = 'rank_result'
+    result_dir = '../Data/output/rank_result'
     if not os.path.exists(result_dir):
         os.makedirs(result_dir)
         print(f"创建结果目录: {result_dir}")
@@ -27,9 +27,9 @@ def create_result_directory():
 
 def load_data():
     """加载数据并合并为分类任务格式"""
-    # 加载两类样本数据
-    df1 = pd.read_csv('ELVES_/data/LUAD_2/LUAD_1.csv', index_col=0)
-    df2 = pd.read_csv('ELVES_/data/LUAD_2/LUAD_2.csv', index_col=0)
+    # 加载两类样本数据（相对路径，相对于Code目录）
+    df1 = pd.read_csv('../Data/feature_selection/LUAD_1.csv', index_col=0)
+    df2 = pd.read_csv('../Data/feature_selection/LUAD_2.csv', index_col=0)
     
     # 合并数据
     X_combined = np.vstack([df1.values, df2.values])
@@ -45,7 +45,7 @@ def load_data():
     
     return X_combined, y_combined, feature_names
 
-def load_feature_ranking(ranking_file='score.csv'):
+def load_feature_ranking(ranking_file='../Data/output/manifest_results.csv'):
     """加载ELVES特征排名结果"""
     try:
         ranking_df = pd.read_csv(ranking_file)
