@@ -4,11 +4,11 @@ library(dplyr)
 library(ComplexHeatmap)
 library(circlize)
 
-# 读取数据
-pseudotime_data <- read_csv("pseudotime_ordered_table_.csv")
-luad_data <- read_csv("LUAD.csv")
-pathway_types <- read_tsv("pathway_types.txt")
-delete_pathways <- readLines("delete_pathway.txt")
+# 读取数据（相对路径，相对于Code目录）
+pseudotime_data <- read_csv("../Data/pseudotime_ordered_table.csv")
+luad_data <- read_csv("../Data/LUAD_pathway_expression.csv")
+pathway_types <- read_tsv("../Data/pathway_types.txt")
+delete_pathways <- readLines("../Data/delete_pathway.txt")
 delete_pathways <- delete_pathways[delete_pathways != ""]  # 移除空行
 
 # 查看数据结构
@@ -155,15 +155,15 @@ ht1 <- Heatmap(
 )
 
 # 保存第一个热图
-png("heatmap_pseudotime_ordered.png", width = 13.5, height = 10, units = "in", res = 300)
+png("../Data/output/heatmap_pseudotime_ordered.png", width = 13.5, height = 10, units = "in", res = 300)
 draw(ht1)
 dev.off()
 
-pdf("heatmap_pseudotime_ordered.pdf", width = 13.5, height = 10)
+pdf("../Data/output/heatmap_pseudotime_ordered.pdf", width = 13.5, height = 10)
 draw(ht1)
 dev.off()
 
-print("First heatmap saved as 'heatmap_pseudotime_ordered.png' and 'heatmap_pseudotime_ordered.pdf'")
+print("First heatmap saved to ../Data/output/")
 
 # ========== 第二个热图：按state分组，state内部按pseudotime排序 ==========
 print("Generating second heatmap: samples ordered by state then pseudotime...")
@@ -216,15 +216,15 @@ ht2 <- Heatmap(
 )
 
 # 保存第二个热图
-png("heatmap_state_pseudotime_ordered.png", width = 13.5, height = 10, units = "in", res = 300)
+png("../Data/output/heatmap_state_pseudotime_ordered.png", width = 13.5, height = 10, units = "in", res = 300)
 draw(ht2)
 dev.off()
 
-pdf("heatmap_state_pseudotime_ordered.pdf", width = 13.5, height = 10)
+pdf("../Data/output/heatmap_state_pseudotime_ordered.pdf", width = 13.5, height = 10)
 draw(ht2)
 dev.off()
 
-print("Second heatmap saved as 'heatmap_state_pseudotime_ordered.png' and 'heatmap_state_pseudotime_ordered.pdf'")
+print("Second heatmap saved to ../Data/output/")
 
 # 显示摘要信息
 print("========== SUMMARY ==========")
