@@ -6,14 +6,15 @@ library(dplyr)
 library(data.table)
 library(tibble)
 
-setwd("/root/autodl-tmp/NSX")
+# 设置工作目录为Data目录（相对于Code目录）
+setwd("../Data")
 
 cat("正在读取数据...\n")
-LUAD_data = fread("LUAD_intersection_genes_restored.csv", header = TRUE)
+LUAD_data = fread("LUAD_intersection_genes.csv", header = TRUE)
 
 # 读取临床信息文件
 cat("正在读取临床信息...\n")
-LUAD_cli = fread("LUAD_cli.csv")
+LUAD_cli = fread("LUAD_clinical.csv")
 
 # 提取tissue_type信息
 tissue_type_data = LUAD_cli[, .(sample, `tissue_type.samples`)]
