@@ -19,7 +19,7 @@ import signal
 
 print("使用PyTorch和GPU加速实现")
 
-# 尝试导入CuPy用于GPU加速
+
 try:
     import cupy as cp
     HAS_CUPY = True
@@ -1081,11 +1081,11 @@ def calculate_mce_for_pathway(G, sample_name, cached_expression_data=None):
         # 获取基因表达量数据
         # 根据样本类型选择表达量文件
         if "LUSC" in sample_name:
-            expression_file = "/root/autodl-tmp/MCE/expression/expression/TCGA-LUSC.star_fpkm_processed.tsv"
+            expression_file = "../Data/expression/TCGA-LUSC.star_fpkm_processed.tsv"
         else:
-            expression_file = "/root/autodl-tmp/MCE/expression/expression/TCGA-LUAD.star_fpkm_processed.tsv"
+            expression_file = "../Data/expression/TCGA-LUAD.star_fpkm_processed.tsv"
             
-        dictionary_file = "/root/autodl-tmp/MCE/MCE_t/gene_id_dictionary_unique.csv"
+        dictionary_file = "../Data/gene_id_dictionary_unique.csv"
         
         # 传递样本名称和缓存数据给get_expression_data函数
         nodes_expression, updated_cache = get_expression_data_for_mce(G, expression_file, dictionary_file, sample_name, cached_expression_data)
@@ -1157,7 +1157,7 @@ def process_pathway_networks(sample_network_file, output_dir, sample_name, pathw
     ensure_directory(output_dir)
     
     # 确保MCE结果目录存在
-    mce_output_dir = "/root/autodl-tmp/Pathway_MCE"
+    mce_output_dir = "../Data/Pathway_MCE"
     ensure_directory(mce_output_dir)
     
     # 创建MCE结果文件路径
@@ -1169,7 +1169,7 @@ def process_pathway_networks(sample_network_file, output_dir, sample_name, pathw
     
     # 加载样本网络的归一化MCE值
     sample_network_mce = None
-    sample_network_mce_file = "/root/autodl-tmp/MCE/MCE_t/results/Hsa_teat.csv"
+    sample_network_mce_file = "../Data/LUAD_MCE.csv"
     if os.path.exists(sample_network_mce_file):
         try:
             sample_mce_df = pd.read_csv(sample_network_mce_file)
@@ -1672,10 +1672,10 @@ def main():
         print(f"GPU内存: {torch.cuda.get_device_properties(0).total_memory / (1024**3):.2f} GB")
         print(f"CUDA版本: {torch.version.cuda}")
     
-    # 检查必要的目录和文件
-    luad_dir = "/root/autodl-tmp/MCE/LUAD"
-    results_base_dir = "/root/autodl-tmp/Final_pathway"
-    pathway_gene_ids_file = "/root/autodl-tmp/pathway_gene_ids.csv"
+    # 检查必要的目录和文件（相对路径，相对于Code目录）
+    luad_dir = "/Users/erjin/Desktop/论文数据/code/MASS-path-main/Data/LUAD"
+    results_base_dir = "../Data/Final_pathway"
+    pathway_gene_ids_file = "/Users/erjin/Desktop/论文数据/code/MASS-path-main/Data/pathway_gene_ids.csv"
     
     # 确保基础结果目录存在
     ensure_directory(results_base_dir)
@@ -1801,14 +1801,14 @@ def main():
                 with open(progress_file, 'a') as f:
                     f.write(f"{sample_name},error,0,0,{error_msg}\n")
             
-            # 更新内存中的状态记录
+
             sample_status[sample_name] = "error"
             
             failed_samples += 1
         
         processed_samples += 1
         
-        # 清理缓存，避免内存泄漏
+
         if use_gpu:
             torch.cuda.empty_cache()
         
