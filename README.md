@@ -1,276 +1,199 @@
 # MASS-path
 
-The core step code of MASS-path paper
+Core code and data pipeline for the MASS-path paper.
 
 ---
 
 ## Code Description
 
-### Code/01_build_strong_gpu.py
+All scripts are located in the `Code/` directory. Each script reads inputs from and writes outputs to the corresponding `data/XX/` subdirectory using relative paths.
+
+---
+
+### 01\_build\_strong\_gpu.py
 **GPU-Accelerated Strongly Connected Network Construction and MCE Calculation**
 
-Implements GPU-accelerated strongly connected network construction using PyTorch and CuPy. Main features:
-- Extract pathway subnetworks from sample networks
-- Calculate optimal center node and supplement cost
-- Complement pathway subnetworks to strongly connected graphs
-- Compute pathway MCE (Minimum Communication Entropy) values
-- Support automatic GPU/CPU switching with batch processing for multiple samples
+Builds strongly connected pathway subnetworks with GPU acceleration via PyTorch and CuPy.
+- Extracts pathway subnetworks from sample networks
+- Identifies optimal center nodes and computes supplement costs
+- Complements pathway subnetworks into strongly connected graphs
+- Computes pathway MCE (Minimum Communication Entropy) values
+- Supports automatic GPU/CPU fallback and batch processing across samples
+
+**Input**: `data/01/` (pathway_gene_ids.csv, sample network files, etc.)
+**Output**: `data/01/` (Sample_MCE_Vectors/, pi vectors, P matrices, etc.)
 
 ---
 
-### Code/02_pathway_mce_calculator.py
-**Pathway Network MCE Calculator (Parallel Optimized Version)**
+### 02\_pathway\_mce\_calculator.py
+**Pathway MCE Calculator (Parallel Optimized)**
 
-Multi-process parallel pathway MCE calculation program. Main features:
-- Load sample π vectors and P transition probability matrices
-- Extract pathway-corresponding submatrices
-- Vectorized pathway MCE calculation
-- Compute MCE ratio (pathway normalized MCE / sample normalized MCE)
-- Batch result saving with checkpoint resume support
+Computes pathway-level MCE values using multi-process parallelism.
+- Loads sample pi vectors and P transition probability matrices
+- Extracts pathway-specific submatrices
+- Performs vectorized pathway MCE calculation
+- Computes MCE ratio (pathway normalized MCE / sample normalized MCE)
+- Supports checkpoint-based resume and batch result saving
+
+**Input**: `data/01/` (outputs from Step 01)
+**Output**: `data/01/` (MCE ratio matrix)
 
 ---
 
-### Code/03_heatmap_script.R
+### 03\_heatmap\_script.R
 **Pathway Expression Heatmap Visualization**
 
-Generate pathway expression heatmaps using ComplexHeatmap package. Main features:
-- Order samples by pseudotime
-- Group display by pathway types
-- Custom color mapping (blue-white-red)
-- Add sample annotations (Pseudotime, State, Cluster)
-- Generate two types of heatmaps:
-  - Ordered by Pseudotime
-  - Grouped by State, then ordered by Pseudotime
+Generates pathway MCE ratio heatmaps using the ComplexHeatmap package.
+- Samples grouped by Monocle State (1→7→2→6→3→5→4), ordered by Pseudotime within each group
+- Pathways grouped by type (Metabolism, Cellular Processes, etc.)
+- Blue-white-red color scale (≤0.5 blue, 1.0 white, ≥1.5 red)
+- Top annotation bars for Pseudotime and State
+
+**Input**: `data/03/` (pseudotime_ordered_table\_.csv, LUAD.csv, pathway_types.txt)
+**Output**: `data/03/heatmap_state_pseudotime_ordered_core.png`
 
 ---
 
-### Code/04_nsx_code.R
-**Monocle Pseudotime Analysis**
+### 04\_nsx\_code.R
+**Monocle Pseudotime Trajectory Analysis**
 
-Perform sample trajectory analysis using Monocle package. Main features:
-- Create CellDataSet object
+Performs sample trajectory inference using Monocle 2.
+- Creates CellDataSet object from gene expression and clinical data
 - DDRTree dimensionality reduction
 - Sample ordering and pseudotime inference
-- Generate multiple trajectory visualizations:
-  - Colored by State
-  - Colored by Pseudotime
-  - Colored by Stage
-  - Colored by Cluster
-  - Colored by Tissue Type (Tumor/Normal)
-- Output pseudotime results table and CellDataSet object
+- Generates trajectory plots colored by State, Pseudotime, Stage, Cluster, and Tissue Type
+- Outputs pseudotime results table and CDS object
+
+**Input**: `data/04/` (LUAD_intersection_genes.csv, LUAD_cli.csv)
+**Output**: `data/04/` (pseudotime_results.csv, trajectory PNG files)
 
 ---
 
-### Code/05_run_manifest.py
+### 05\_run\_manifest.py
 **ManiFeSt Feature Selection Algorithm**
 
-Run ManiFeSt GPU-accelerated feature selection algorithm. Main features:
-- Load and merge two-class sample data
-- Create classification labels (0/1)
-- Call ManiFeSt_gpu to compute feature scores
-- Rank features by score in descending order
-- Save feature ranking results (Rank, Feature_Index, Feature_Name, ManiFeSt_Score)
+Runs the GPU-accelerated ManiFeSt feature selection algorithm.
+- Loads and merges two-state sample data
+- Constructs binary classification labels (0/1)
+- Calls ManiFeSt\_gpu to compute feature discriminability scores
+- Ranks all features by score in descending order
+- Saves ranking results (Rank, Feature\_Index, Feature\_Name, ManiFeSt\_Score)
+
+**Config**: `CANCER_TYPE`, `STATE_A`, `STATE_B`
+**Input**: `data/05/feature_selection/` ({CANCER_TYPE}\_state\_{A/B}.csv)
+**Output**: `data/05/` ({CANCER_TYPE}\_manifest\_state{A}\_vs\_state{B}.csv)
 
 ---
 
-### Code/06_validate_feature_ranking.py
+### 06\_validate\_feature\_ranking.py
 **Feature Ranking Validation and Comparative Analysis**
 
-Validate the effectiveness of feature ranking algorithms. Main features:
-- Generate three feature ordering methods:
-  - Positive order (algorithm ranking)
-  - Negative order (reverse importance)
-  - Random order (5-run average)
-- Progressive feature evaluation (incrementally adding features)
-- Stratified cross-validation using Random Forest classifier
-- Compute multiple evaluation metrics (Accuracy, Precision, Recall, F1, AUC)
-- Generate comparison curves and statistical reports
-- Analyze optimal feature count and feature importance
+Validates the effectiveness of ManiFeSt feature rankings.
+- Generates three feature orderings: positive (ManiFeSt ranking), negative (reversed), and random (5-run average)
+- Progressive feature evaluation: incrementally adds features and tracks classification performance
+- Random Forest classifier with stratified cross-validation
+- Computes Accuracy, Precision, Recall, F1, and AUC
+- Generates comparison curves and statistical reports
+- Identifies the optimal number of features
+
+**Input**: `data/05/` (ManiFeSt ranking files, state data)
+**Output**: `data/05/rank_result_{CANCER_TYPE}_state{A}_vs_state{B}/`
 
 ---
 
-### Code/07_create_upset_plot.R
-**UpSet Plot Generation**
+### 07\_create\_upset\_plot.R
+**UpSet Intersection Plot**
 
-Create feature intersection visualizations using UpSetR package. Main features:
-- Read feature indices from different state comparisons
-- Create binary matrix representing feature membership
-- Calculate intersection sizes for all combinations
-- Generate UpSet plots showing intersection relationships
-- Support custom colors and set ordering
-- Output detailed statistics
+Creates feature intersection visualizations using the UpSetR package.
+- Reads feature indices from 6 state-pair comparisons (Excel)
+- Constructs binary membership matrix
+- Computes intersection sizes for all combinations
+- Generates UpSet plots showing intersection relationships
+- Supports custom colors and set ordering
+
+**Input**: `data/07/` (feature_indices_comparison.xlsx)
+**Output**: `data/07/` (upset_plot_R.png, upset_statistics_R.csv)
 
 ---
 
-### Code/08_plot_pathway_network.py
+### 08\_plot\_pathway\_network.py
 **Pathway Network Visualization**
 
-Draw network graphs based on KEGG pathway relationships. Main features:
-- Load pathway relationships and type information
-- Sector layout grouped by pathway types
-- Node size reflects degree (connection count)
-- Same-type edges use corresponding colors
-- Cross-type edges use gradient colors
-- Support Top-K pathway highlighting
-- Output PNG and SVG formats
+Draws network graphs based on KEGG pathway relationships.
+- Loads pathway relationships and type annotations
+- Sector layout grouped by pathway type
+- Node size proportional to degree (connection count)
+- Intra-type edges colored by type; cross-type edges use gradient colors
+- Supports Top-K pathway highlighting
+
+**Input**: `data/08/` (kegg_pathway_relations_summary.csv, pathway_types.txt, rank.csv)
+**Output**: `data/08/` (pathway_network.png/svg)
 
 ---
 
-### Code/09_create_tripartite_from_mapping.py
-**Tripartite Network Diagram (Drug-Gene-Pathway)**
+### 09\_create\_tripartite\_from\_mapping.py
+**Drug-Gene-Pathway Tripartite Network**
 
-Create three-layer network diagram for drugs, genes, and pathways. Main features:
-- Three-layer layout: Pathways (top), Genes (middle), Drugs (bottom)
+Generates a three-layer network diagram from drug-gene-pathway mappings.
+- Three-layer layout: Pathways (top) → Genes (middle) → Drugs (bottom)
 - Gradient-colored edges connecting adjacent layers
 - Edges originate from node circle perimeters
 - Automatic grouping of related gene families (ERBB, NTRK, MAP2K, etc.)
-- Output high-resolution PNG images
+
+**Input**: `data/09/` (H00014_drug_gene_pathway_mapping_merged.csv)
+**Output**: `data/09/tripartite_pathway_gene_drug.png`
 
 ---
 
-## Usage
+### 10\_supervised\_analysis.py
+**Supervised Dimensionality Reduction Analysis**
 
-Each Figure folder contains paired code and data. Navigate to the corresponding directory to run.
+Evaluates state clustering using multiple dimensionality reduction methods.
+- LDA (Linear Discriminant Analysis)
+- t-SNE
+- PCA
+- UMAP
+- Visualizes reduction results for each method
 
----
-
-## Folder Description
-
-### base_data/
-**Base Data Files**
-
-| File | Description |
-|------|-------------|
-| `pathway_363_genes.csv` | Gene list for 363 pathways |
-| `expression_485_all_genes.csv` | Full gene expression matrix for 485 samples |
-| `methylation450_485.csv` | Methylation data for 485 samples |
-| `LUAD_cli.csv` | Sample clinical information |
-| `bundle_summary.csv` | Data summary information |
+**Input**: `data/10/state_result/` (per-state sample CSVs)
+**Output**: `data/10/supervised_results/`
 
 ---
 
-### Figure 3_a/
-**Monocle Pseudotime Analysis (Figure 3a)**
+### 11\_stage\_survival\_50\_50\_fixed.R
+**Stage Survival Analysis (50/50 Split)**
 
-| File | Description |
-|------|-------------|
-| `04_nsx_code.R` | Monocle pseudotime analysis code |
-| `LUAD_intersection_genes.csv` | LUAD gene expression matrix (input) |
-| `LUAD_cli.csv` | LUAD clinical information (input) |
+Performs survival analysis on stage-specific patient subgroups.
+- Reads sample data with survival information
+- Splits patients into high-risk and low-risk groups at the median (50/50)
+- Draws Kaplan-Meier survival curves using survival + survminer
+- Computes Log-rank test p-values
 
-**Output:** Trajectory plots (trajectory_by_*.png), pseudotime results table (pseudotime_results.csv)
-
----
-
-### Figure 3_b/
-**LDA Clustering Plot**
-
-| File | Description |
-|------|-------------|
-| `pseudotime_ordered_table.csv` | Sample pseudotime ordering table (input) |
-
-**Output:** LDA clustering plot
+**Input**: `data/11/` (stage2_pre_with_survival.csv)
+**Output**: `data/11/high_low_risk_survival_results/`
 
 ---
 
-### Figure 3_c/
-**Pathway Expression Heatmap (Figure 3c)**
+## Data Directory Structure
 
-| File | Description |
-|------|-------------|
-| `03_heatmap_script.R` | Heatmap visualization code |
-| `pseudotime_ordered_table.csv` | Sample pseudotime ordering table (input) |
-| `LUAD_pathway_expression.csv.csv` | Pathway expression matrix (input) |
-| `pathway_types.txt` | Pathway type annotation (input) |
-
-**Output:** Heatmap (heatmap_pseudotime_ordered.png/pdf)
-
----
-
-### Figure 3_d/
-**Survival Analysis (Figure 3d)**
-
-| File | Description |
-|------|-------------|
-| `stage_survival_50_50_fixed.R` | Survival analysis code |
-| `stage2_pre_with_survival.csv` | Sample data with survival information (input) |
-
-**Output:** Kaplan-Meier survival curve
+| Directory | Scripts | Contents |
+|-----------|---------|----------|
+| `data/01/` | 01, 02 | Sample networks, pi vectors, P matrices, MCE results |
+| `data/03/` | 03 | MCE ratio matrix (LUAD.csv), pseudotime table, heatmap output |
+| `data/04/` | 04 | Gene expression matrix, clinical info, pseudotime results |
+| `data/05/` | 05, 06 | ManiFeSt module, state data, ranking results, validation results |
+| `data/07/` | 07 | Feature index Excel, UpSet plot output |
+| `data/08/` | 08 | Pathway relationships, type annotations, rankings, network plots |
+| `data/09/` | 09 | Drug-gene-pathway mapping, tripartite network output |
+| `data/10/` | 10 | State-grouped data, dimensionality reduction results |
+| `data/11/` | 11 | Survival data, survival curve output |
 
 ---
 
-### Figure 4/
-**ManiFeSt Feature Selection and Validation (Figure 4)**
+## Supplementary Data
 
-| File | Description |
-|------|-------------|
-| `05_run_manifest.py` | ManiFeSt feature selection algorithm |
-| `06_validate_feature_ranking.py` | Feature ranking validation code |
-| `LUAD_1.csv` | Class 1 sample feature matrix (input) |
-| `LUAD_2.csv` | Class 2 sample feature matrix (input) |
-| `manifest_results.csv` | ManiFeSt feature ranking results |
-| `feature_rank_fig4/` | Validation results output directory |
-
-**Output:** Feature ranking comparison curves, validation reports
-
----
-
-### Figure 4 upset/
-**UpSet Intersection Plot (Figure 4 UpSet)**
-
-| File | Description |
-|------|-------------|
-| `07_create_upset_plot.R` | UpSet plot generation code |
-| `feature_indices_comparison.xlsx` | Feature indices from state comparisons (input) |
-
-**Output:** UpSet plot (upset_plot_R.png), intersection statistics (upset_statistics_R.csv)
-
----
-
-### Figure 5/
-**Pathway Network Graph (Figure 5)**
-
-| File | Description |
-|------|-------------|
-| `08_plot_pathway_network.py` | Pathway network visualization code |
-| `kegg_pathway_relations_summary.csv` | KEGG pathway relationships (input) |
-| `pathway_types.txt` | Pathway type annotation (input) |
-| `rank.csv` | Pathway ranking (for Top-K highlighting) |
-| `feature_rank_fig5/` | ManiFeSt results directory |
-
-**Output:** Pathway network graph (pathway_network.png/svg)
-
----
-
-### Figure 6/
-**Drug-Gene-Pathway Tripartite Network (Figure 6)**
-
-| File | Description |
-|------|-------------|
-| `09_create_tripartite_from_mapping.py` | Tripartite network generation code |
-| `H00014_drug_gene_pathway_mapping_merged.csv` | Drug-gene-pathway mapping (input) |
-
-**Output:** Tripartite network graph (tripartite_pathway_gene_drug.png)
-
----
-
-### supplement_data/
-**Supplementary Data**
-
-| File | Description |
-|------|-------------|
-| `Supplementary_data_1.xlsx` | Pathway network topology features for each sample (485 samples × 731 columns), including sample network nodes/edges and nodes/edges for 363 pathways |
-| `Supplementary_data_2.xlsx` | Pathway MCE ratio matrix for each sample (485 samples × 363 pathways), feature matrix for downstream analysis |
-| `Supplementary_data_3.xlsx` | Differential pathway lists for 6 state comparisons, including pathway ID, type, name, and UpSet intersection statistics |
-
-**Supplementary_data_3.xlsx Details:**
-
-| Sheet | Content |
-|-------|---------|
-| Sheet1 | State1 vs State4 differential pathways (32) |
-| Sheet2 | State1 vs State6 differential pathways (38) |
-| Sheet3 | State1 vs State7 differential pathways (51) |
-| Sheet4 | State4 vs State6 differential pathways (33) |
-| Sheet5 | State4 vs State7 differential pathways (57) |
-| Sheet6 | State6 vs State7 differential pathways (31) |
-| Sheet7 | UpSet intersection statistics across degrees for 6 comparisons |
+| File | Contents |
+|------|----------|
+| `Supplementary_data_1.xlsx` | Pathway network topology features per sample (485 samples × 731 columns) |
+| `Supplementary_data_2.xlsx` | Pathway MCE ratio matrix per sample (485 samples × 363 pathways) |
+| `Supplementary_data_3.xlsx` | Differential pathway lists for 6 state comparisons with UpSet intersection statistics |

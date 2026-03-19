@@ -1,0 +1,581 @@
+Pathway_ID	Pathway_Type
+hsa01100	Metabolism
+hsa01110	Metabolism
+hsa01120	Metabolism
+hsa01200	Metabolism
+hsa01210	Metabolism
+hsa01212	Metabolism
+hsa01230	Metabolism
+hsa01232	Metabolism
+hsa01250	Metabolism
+hsa01240	Metabolism
+hsa01220	Metabolism
+hsa01310	Metabolism
+hsa01320	Metabolism
+hsa00010	Metabolism
+hsa00020	Metabolism
+hsa00030	Metabolism
+hsa00040	Metabolism
+hsa00051	Metabolism
+hsa00052	Metabolism
+hsa00053	Metabolism
+hsa00500	Metabolism
+hsa00620	Metabolism
+hsa00630	Metabolism
+hsa00640	Metabolism
+hsa00650	Metabolism
+hsa00660	Metabolism
+hsa00562	Metabolism
+hsa00190	Metabolism
+hsa00195	Metabolism
+hsa00196	Metabolism
+hsa00710	Metabolism
+hsa00720	Metabolism
+hsa00680	Metabolism
+hsa00910	Metabolism
+hsa00920	Metabolism
+hsa00061	Metabolism
+hsa00062	Metabolism
+hsa00071	Metabolism
+hsa00073	Metabolism
+hsa00074	Metabolism
+hsa00100	Metabolism
+hsa00120	Metabolism
+hsa00121	Metabolism
+hsa00140	Metabolism
+hsa00561	Metabolism
+hsa00564	Metabolism
+hsa00565	Metabolism
+hsa00600	Metabolism
+hsa00590	Metabolism
+hsa00591	Metabolism
+hsa00592	Metabolism
+hsa01040	Metabolism
+hsa00230	Metabolism
+hsa00240	Metabolism
+hsa00250	Metabolism
+hsa00260	Metabolism
+hsa00270	Metabolism
+hsa00280	Metabolism
+hsa00290	Metabolism
+hsa00300	Metabolism
+hsa00310	Metabolism
+hsa00220	Metabolism
+hsa00330	Metabolism
+hsa00340	Metabolism
+hsa00350	Metabolism
+hsa00360	Metabolism
+hsa00380	Metabolism
+hsa00400	Metabolism
+hsa00410	Metabolism
+hsa00430	Metabolism
+hsa00440	Metabolism
+hsa00450	Metabolism
+hsa00460	Metabolism
+hsa00470	Metabolism
+hsa00480	Metabolism
+hsa00520	Metabolism
+hsa00541	Metabolism
+hsa00510	Metabolism
+hsa00513	Metabolism
+hsa00512	Metabolism
+hsa00515	Metabolism
+hsa00514	Metabolism
+hsa00532	Metabolism
+hsa00534	Metabolism
+hsa00533	Metabolism
+hsa00531	Metabolism
+hsa00563	Metabolism
+hsa00601	Metabolism
+hsa00603	Metabolism
+hsa00604	Metabolism
+hsa00511	Metabolism
+hsa00540	Metabolism
+hsa00542	Metabolism
+hsa00550	Metabolism
+hsa00552	Metabolism
+hsa00571	Metabolism
+hsa00572	Metabolism
+hsa00543	Metabolism
+hsa00730	Metabolism
+hsa00740	Metabolism
+hsa00750	Metabolism
+hsa00760	Metabolism
+hsa00770	Metabolism
+hsa00780	Metabolism
+hsa00785	Metabolism
+hsa00790	Metabolism
+hsa00670	Metabolism
+hsa00830	Metabolism
+hsa00860	Metabolism
+hsa00130	Metabolism
+hsa00900	Metabolism
+hsa00902	Metabolism
+hsa00909	Metabolism
+hsa00904	Metabolism
+hsa00906	Metabolism
+hsa00905	Metabolism
+hsa00981	Metabolism
+hsa00908	Metabolism
+hsa00903	Metabolism
+hsa00907	Metabolism
+hsa01052	Metabolism
+hsa00522	Metabolism
+hsa01051	Metabolism
+hsa01059	Metabolism
+hsa01056	Metabolism
+hsa01057	Metabolism
+hsa00253	Metabolism
+hsa00523	Metabolism
+hsa01054	Metabolism
+hsa01053	Metabolism
+hsa01055	Metabolism
+hsa00940	Metabolism
+hsa00945	Metabolism
+hsa00941	Metabolism
+hsa00944	Metabolism
+hsa00942	Metabolism
+hsa00943	Metabolism
+hsa00946	Metabolism
+hsa00901	Metabolism
+hsa00403	Metabolism
+hsa00950	Metabolism
+hsa00960	Metabolism
+hsa00996	Metabolism
+hsa00232	Metabolism
+hsa00965	Metabolism
+hsa00966	Metabolism
+hsa00402	Metabolism
+hsa00311	Metabolism
+hsa00332	Metabolism
+hsa00261	Metabolism
+hsa00331	Metabolism
+hsa00521	Metabolism
+hsa00524	Metabolism
+hsa00525	Metabolism
+hsa00401	Metabolism
+hsa00404	Metabolism
+hsa00405	Metabolism
+hsa00333	Metabolism
+hsa00254	Metabolism
+hsa00998	Metabolism
+hsa00999	Metabolism
+hsa00997	Metabolism
+hsa00362	Metabolism
+hsa00627	Metabolism
+hsa00364	Metabolism
+hsa00625	Metabolism
+hsa00361	Metabolism
+hsa00623	Metabolism
+hsa00622	Metabolism
+hsa00633	Metabolism
+hsa00642	Metabolism
+hsa00643	Metabolism
+hsa00791	Metabolism
+hsa00930	Metabolism
+hsa00363	Metabolism
+hsa00621	Metabolism
+hsa00626	Metabolism
+hsa00624	Metabolism
+hsa00365	Metabolism
+hsa00984	Metabolism
+hsa00980	Metabolism
+hsa00982	Metabolism
+hsa00983	Metabolism
+hsa01010	Metabolism
+hsa01060	Metabolism
+hsa01061	Metabolism
+hsa01062	Metabolism
+hsa01063	Metabolism
+hsa01064	Metabolism
+hsa01065	Metabolism
+hsa01066	Metabolism
+hsa01070	Metabolism
+hsa03020	Genetic Information Processing
+hsa03022	Genetic Information Processing
+hsa03040	Genetic Information Processing
+hsa03010	Genetic Information Processing
+hsa00970	Genetic Information Processing
+hsa03013	Genetic Information Processing
+hsa03015	Genetic Information Processing
+hsa03008	Genetic Information Processing
+hsa03060	Genetic Information Processing
+hsa04141	Genetic Information Processing
+hsa04130	Genetic Information Processing
+hsa04120	Genetic Information Processing
+hsa04122	Genetic Information Processing
+hsa03050	Genetic Information Processing
+hsa03018	Genetic Information Processing
+hsa03030	Genetic Information Processing
+hsa03410	Genetic Information Processing
+hsa03420	Genetic Information Processing
+hsa03430	Genetic Information Processing
+hsa03440	Genetic Information Processing
+hsa03450	Genetic Information Processing
+hsa03460	Genetic Information Processing
+hsa03082	Genetic Information Processing
+hsa03083	Genetic Information Processing
+hsa03230	Genetic Information Processing
+hsa03240	Genetic Information Processing
+hsa03250	Genetic Information Processing
+hsa03260	Genetic Information Processing
+hsa03271	Genetic Information Processing
+hsa03262	Genetic Information Processing
+hsa03261	Genetic Information Processing
+hsa03263	Genetic Information Processing
+hsa03264	Genetic Information Processing
+hsa03265	Genetic Information Processing
+hsa03273	Genetic Information Processing
+hsa03272	Genetic Information Processing
+hsa03266	Genetic Information Processing
+hsa03268	Genetic Information Processing
+hsa03267	Genetic Information Processing
+hsa03259	Genetic Information Processing
+hsa03258	Genetic Information Processing
+hsa02010	Environmental Information Processing
+hsa02060	Environmental Information Processing
+hsa03070	Environmental Information Processing
+hsa02020	Environmental Information Processing
+hsa04010	Environmental Information Processing
+hsa04013	Environmental Information Processing
+hsa04016	Environmental Information Processing
+hsa04011	Environmental Information Processing
+hsa04012	Environmental Information Processing
+hsa04014	Environmental Information Processing
+hsa04015	Environmental Information Processing
+hsa04310	Environmental Information Processing
+hsa04330	Environmental Information Processing
+hsa04340	Environmental Information Processing
+hsa04341	Environmental Information Processing
+hsa04350	Environmental Information Processing
+hsa04390	Environmental Information Processing
+hsa04391	Environmental Information Processing
+hsa04392	Environmental Information Processing
+hsa04370	Environmental Information Processing
+hsa04371	Environmental Information Processing
+hsa04630	Environmental Information Processing
+hsa04064	Environmental Information Processing
+hsa04668	Environmental Information Processing
+hsa04066	Environmental Information Processing
+hsa04068	Environmental Information Processing
+hsa04020	Environmental Information Processing
+hsa04070	Environmental Information Processing
+hsa04072	Environmental Information Processing
+hsa04071	Environmental Information Processing
+hsa04024	Environmental Information Processing
+hsa04022	Environmental Information Processing
+hsa04151	Environmental Information Processing
+hsa04152	Environmental Information Processing
+hsa04150	Environmental Information Processing
+hsa04075	Environmental Information Processing
+hsa04080	Environmental Information Processing
+hsa04082	Environmental Information Processing
+hsa04081	Environmental Information Processing
+hsa04060	Environmental Information Processing
+hsa04061	Environmental Information Processing
+hsa04512	Environmental Information Processing
+hsa04514	Environmental Information Processing
+hsa04144	Cellular Processes
+hsa04145	Cellular Processes
+hsa04142	Cellular Processes
+hsa04146	Cellular Processes
+hsa04140	Cellular Processes
+hsa04138	Cellular Processes
+hsa04136	Cellular Processes
+hsa04137	Cellular Processes
+hsa04139	Cellular Processes
+hsa04148	Cellular Processes
+hsa04110	Cellular Processes
+hsa04111	Cellular Processes
+hsa04112	Cellular Processes
+hsa04113	Cellular Processes
+hsa04114	Cellular Processes
+hsa04210	Cellular Processes
+hsa04214	Cellular Processes
+hsa04215	Cellular Processes
+hsa04216	Cellular Processes
+hsa04217	Cellular Processes
+hsa04115	Cellular Processes
+hsa04218	Cellular Processes
+hsa04510	Cellular Processes
+hsa04520	Cellular Processes
+hsa04530	Cellular Processes
+hsa04540	Cellular Processes
+hsa04550	Cellular Processes
+hsa02024	Cellular Processes
+hsa05111	Cellular Processes
+hsa02025	Cellular Processes
+hsa02026	Cellular Processes
+hsa02030	Cellular Processes
+hsa02040	Cellular Processes
+hsa04814	Cellular Processes
+hsa04820	Cellular Processes
+hsa04810	Cellular Processes
+hsa04640	Organismal Systems
+hsa04610	Organismal Systems
+hsa04611	Organismal Systems
+hsa04613	Organismal Systems
+hsa04620	Organismal Systems
+hsa04624	Organismal Systems
+hsa04621	Organismal Systems
+hsa04622	Organismal Systems
+hsa04623	Organismal Systems
+hsa04625	Organismal Systems
+hsa04650	Organismal Systems
+hsa04612	Organismal Systems
+hsa04660	Organismal Systems
+hsa04658	Organismal Systems
+hsa04659	Organismal Systems
+hsa04657	Organismal Systems
+hsa04662	Organismal Systems
+hsa04664	Organismal Systems
+hsa04666	Organismal Systems
+hsa04670	Organismal Systems
+hsa04672	Organismal Systems
+hsa04062	Organismal Systems
+hsa04911	Organismal Systems
+hsa04910	Organismal Systems
+hsa04922	Organismal Systems
+hsa04923	Organismal Systems
+hsa04920	Organismal Systems
+hsa03320	Organismal Systems
+hsa04929	Organismal Systems
+hsa04912	Organismal Systems
+hsa04913	Organismal Systems
+hsa04915	Organismal Systems
+hsa04914	Organismal Systems
+hsa04917	Organismal Systems
+hsa04921	Organismal Systems
+hsa04926	Organismal Systems
+hsa04935	Organismal Systems
+hsa04918	Organismal Systems
+hsa04919	Organismal Systems
+hsa04928	Organismal Systems
+hsa04916	Organismal Systems
+hsa04924	Organismal Systems
+hsa04614	Organismal Systems
+hsa04925	Organismal Systems
+hsa04927	Organismal Systems
+hsa04260	Organismal Systems
+hsa04261	Organismal Systems
+hsa04270	Organismal Systems
+hsa04970	Organismal Systems
+hsa04971	Organismal Systems
+hsa04972	Organismal Systems
+hsa04976	Organismal Systems
+hsa04973	Organismal Systems
+hsa04974	Organismal Systems
+hsa04975	Organismal Systems
+hsa04979	Organismal Systems
+hsa04977	Organismal Systems
+hsa04981	Organismal Systems
+hsa04980	Organismal Systems
+hsa04978	Organismal Systems
+hsa04962	Organismal Systems
+hsa04960	Organismal Systems
+hsa04961	Organismal Systems
+hsa04964	Organismal Systems
+hsa04966	Organismal Systems
+hsa04724	Organismal Systems
+hsa04727	Organismal Systems
+hsa04725	Organismal Systems
+hsa04728	Organismal Systems
+hsa04726	Organismal Systems
+hsa04720	Organismal Systems
+hsa04730	Organismal Systems
+hsa04723	Organismal Systems
+hsa04721	Organismal Systems
+hsa04722	Organismal Systems
+hsa04744	Organismal Systems
+hsa04745	Organismal Systems
+hsa04740	Organismal Systems
+hsa04742	Organismal Systems
+hsa04750	Organismal Systems
+hsa04320	Organismal Systems
+hsa04360	Organismal Systems
+hsa04361	Organismal Systems
+hsa04380	Organismal Systems
+hsa04382	Organismal Systems
+hsa04211	Organismal Systems
+hsa04212	Organismal Systems
+hsa04213	Organismal Systems
+hsa04710	Organismal Systems
+hsa04713	Organismal Systems
+hsa04711	Organismal Systems
+hsa04712	Organismal Systems
+hsa04714	Organismal Systems
+hsa04626	Organismal Systems
+hsa05200	Human Diseases
+hsa05202	Human Diseases
+hsa05206	Human Diseases
+hsa05205	Human Diseases
+hsa05204	Human Diseases
+hsa05207	Human Diseases
+hsa05208	Human Diseases
+hsa05203	Human Diseases
+hsa05230	Human Diseases
+hsa05231	Human Diseases
+hsa05235	Human Diseases
+hsa05210	Human Diseases
+hsa05212	Human Diseases
+hsa05225	Human Diseases
+hsa05226	Human Diseases
+hsa05214	Human Diseases
+hsa05216	Human Diseases
+hsa05221	Human Diseases
+hsa05220	Human Diseases
+hsa05217	Human Diseases
+hsa05218	Human Diseases
+hsa05211	Human Diseases
+hsa05219	Human Diseases
+hsa05215	Human Diseases
+hsa05213	Human Diseases
+hsa05224	Human Diseases
+hsa05222	Human Diseases
+hsa05223	Human Diseases
+hsa05166	Human Diseases
+hsa05170	Human Diseases
+hsa05161	Human Diseases
+hsa05160	Human Diseases
+hsa05171	Human Diseases
+hsa05164	Human Diseases
+hsa05162	Human Diseases
+hsa05168	Human Diseases
+hsa05163	Human Diseases
+hsa05167	Human Diseases
+hsa05169	Human Diseases
+hsa05165	Human Diseases
+hsa05110	Human Diseases
+hsa05120	Human Diseases
+hsa05130	Human Diseases
+hsa05132	Human Diseases
+hsa05131	Human Diseases
+hsa05135	Human Diseases
+hsa05133	Human Diseases
+hsa05134	Human Diseases
+hsa05150	Human Diseases
+hsa05152	Human Diseases
+hsa05100	Human Diseases
+hsa05146	Human Diseases
+hsa05144	Human Diseases
+hsa05145	Human Diseases
+hsa05140	Human Diseases
+hsa05142	Human Diseases
+hsa05143	Human Diseases
+hsa05310	Human Diseases
+hsa05322	Human Diseases
+hsa05323	Human Diseases
+hsa05320	Human Diseases
+hsa05321	Human Diseases
+hsa05330	Human Diseases
+hsa05332	Human Diseases
+hsa05340	Human Diseases
+hsa05010	Human Diseases
+hsa05012	Human Diseases
+hsa05014	Human Diseases
+hsa05016	Human Diseases
+hsa05017	Human Diseases
+hsa05020	Human Diseases
+hsa05022	Human Diseases
+hsa05030	Human Diseases
+hsa05031	Human Diseases
+hsa05032	Human Diseases
+hsa05033	Human Diseases
+hsa05034	Human Diseases
+hsa05417	Human Diseases
+hsa05418	Human Diseases
+hsa05410	Human Diseases
+hsa05412	Human Diseases
+hsa05414	Human Diseases
+hsa05415	Human Diseases
+hsa05416	Human Diseases
+hsa04930	Human Diseases
+hsa04940	Human Diseases
+hsa04950	Human Diseases
+hsa04936	Human Diseases
+hsa04932	Human Diseases
+hsa04931	Human Diseases
+hsa04933	Human Diseases
+hsa04934	Human Diseases
+hsa01501	Human Diseases
+hsa01502	Human Diseases
+hsa01503	Human Diseases
+hsa01521	Human Diseases
+hsa01524	Human Diseases
+hsa01523	Human Diseases
+hsa01522	Human Diseases
+hsa07011	Drug Development
+hsa07012	Drug Development
+hsa07013	Drug Development
+hsa07021	Drug Development
+hsa07019	Drug Development
+hsa07020	Drug Development
+hsa07014	Drug Development
+hsa07023	Drug Development
+hsa07026	Drug Development
+hsa07044	Drug Development
+hsa07053	Drug Development
+hsa07040	Drug Development
+hsa07041	Drug Development
+hsa07042	Drug Development
+hsa07043	Drug Development
+hsa07045	Drug Development
+hsa07032	Drug Development
+hsa07030	Drug Development
+hsa07033	Drug Development
+hsa07015	Drug Development
+hsa07039	Drug Development
+hsa07028	Drug Development
+hsa07029	Drug Development
+hsa07031	Drug Development
+hsa07027	Drug Development
+hsa07056	Drug Development
+hsa07057	Drug Development
+hsa07055	Drug Development
+hsa07016	Drug Development
+hsa07017	Drug Development
+hsa07018	Drug Development
+hsa07037	Drug Development
+hsa07038	Drug Development
+hsa07046	Drug Development
+hsa07047	Drug Development
+hsa07048	Drug Development
+hsa07049	Drug Development
+hsa07050	Drug Development
+hsa07051	Drug Development
+hsa07052	Drug Development
+hsa07054	Drug Development
+hsa07220	Drug Development
+hsa07215	Drug Development
+hsa07214	Drug Development
+hsa07213	Drug Development
+hsa07212	Drug Development
+hsa07227	Drug Development
+hsa07211	Drug Development
+hsa07228	Drug Development
+hsa07224	Drug Development
+hsa07229	Drug Development
+hsa07225	Drug Development
+hsa07226	Drug Development
+hsa07223	Drug Development
+hsa07222	Drug Development
+hsa07221	Drug Development
+hsa07230	Drug Development
+hsa07036	Drug Development
+hsa07231	Drug Development
+hsa07232	Drug Development
+hsa07235	Drug Development
+hsa07233	Drug Development
+hsa07234	Drug Development
+hsa07216	Drug Development
+hsa07219	Drug Development
+hsa07024	Drug Development
+hsa07217	Drug Development
+hsa07218	Drug Development
+hsa07025	Drug Development
+hsa07034	Drug Development
+hsa07035	Drug Development
+hsa07110	Drug Development
+hsa07112	Drug Development
+hsa07114	Drug Development
+hsa07117	Drug Development

@@ -19,6 +19,11 @@ import signal
 
 print("使用PyTorch和GPU加速实现")
 
+# 基于脚本位置计算路径，确保从任意目录运行都能正确找到文件
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_DIR = os.path.dirname(SCRIPT_DIR)
+DATA_01_DIR = os.path.join(PROJECT_DIR, "data", "01")
+
 
 try:
     import cupy as cp
@@ -1044,6 +1049,129 @@ def normalize_mce(mce, max_mce):
     return mce / max_mce
 
 
+def compute_sample_mce_and_save_vectors(sample_network, sample_name, vectors_output_dir):
+    """
+    计算样本网络的MCE值，并保存π向量、P矩阵和节点映射文件，
+    供02_pathway_mce_calculator.py使用。
+
+    参数:
+    sample_network: 样本网络 (NetworkX DiGraph)
+    sample_name: 样本名称
+    vectors_output_dir: 向量输出基础目录 (如 ../Data/Sample_MCE_Vectors)
+
+    返回:
+    normalized_mce: 样本网络的归一化MCE值
+    expression_cache: 表达数据缓存（可供后续通路MCE计算复用）
+    """
+    sample_vectors_dir = os.path.join(vectors_output_dir, sample_name)
+    mce_summary_file = os.path.join(sample_vectors_dir, f"{sample_name}_mce_summary.csv")
+
+    # 如果已有计算结果，直接读取（支持断点续跑）
+    if os.path.exists(mce_summary_file):
+        try:
+            mce_summary = pd.read_csv(mce_summary_file)
+            normalized_mce = float(mce_summary['normalized_mce'].iloc[0])
+            print(f"从缓存加载样本MCE值: {normalized_mce:.6f}")
+            return normalized_mce, None
+        except Exception as e:
+            print(f"读取缓存MCE值失败: {e}，将重新计算")
+
+    print(f"\n计算样本 {sample_name} 的整体网络MCE值...")
+
+    if sample_network.number_of_nodes() <= 1:
+        print("样本网络节点数过少，无法计算MCE")
+        return None, None
+
+    # 确定表达量文件
+    if "LUSC" in sample_name:
+        expression_file = os.path.join(DATA_01_DIR, "expression", "TCGA-LUSC.star_fpkm_processed.tsv")
+    else:
+        expression_file = os.path.join(DATA_01_DIR, "expression", "TCGA-LUAD.star_fpkm_processed.tsv")
+    dictionary_file = os.path.join(DATA_01_DIR, "gene_id_dictionary_unique.csv")
+
+    try:
+        # 邻接矩阵（加自环）
+        graph_nodes = list(sample_network.nodes())
+        A = nx.to_numpy_array(sample_network)
+        np.fill_diagonal(A, 1)
+
+        # 获取表达量数据
+        nodes_expression, expression_cache = get_expression_data_for_mce(
+            sample_network, expression_file, dictionary_file, sample_name
+        )
+        if not nodes_expression:
+            print("无法获取表达量数据")
+            return None, None
+
+        # 计算π向量
+        node_ids, x, pi = calculate_normalized_expression(nodes_expression, graph_nodes)
+
+        # 求解α和β
+        alpha, beta = solve_nonlinear_equations(A, pi)
+
+        # 计算MCE值
+        mce_value = calculate_mce_value(pi, alpha, beta)
+        max_mce = calculate_max_mce(A)
+        normalized_mce = normalize_mce(mce_value, max_mce)
+        print(f"样本网络MCE: {mce_value:.6f}, 最大MCE: {max_mce:.6f}, 归一化MCE: {normalized_mce:.6f}")
+
+        # ---- 保存向量文件 ----
+        ensure_directory(sample_vectors_dir)
+
+        # 节点ID转为整数（与02脚本的 int32 dtype 兼容）
+        def _to_int(nid):
+            try:
+                return int(float(str(nid)))
+            except (ValueError, TypeError):
+                return nid
+
+        node_ids_int = [_to_int(n) for n in node_ids]
+
+        # 保存π向量
+        pi_df = pd.DataFrame({'node_id': node_ids_int, 'pi': pi.astype(np.float32)})
+        pi_file = os.path.join(sample_vectors_dir, f"{sample_name}_pi_vector.csv")
+        pi_df.to_csv(pi_file, index=False)
+        print(f"π向量已保存: {pi_file}")
+
+        # 保存节点映射
+        mapping_df = pd.DataFrame({
+            'node_id': node_ids_int,
+            'vector_index': list(range(len(node_ids_int)))
+        })
+        mapping_file = os.path.join(sample_vectors_dir, f"{sample_name}_node_mapping.csv")
+        mapping_df.to_csv(mapping_file, index=False)
+        print(f"节点映射已保存: {mapping_file}")
+
+        # 保存P矩阵（稀疏格式）: P[i,j] = α[i] * A[i,j] * β[j]
+        nonzero_i, nonzero_j = np.nonzero(A)
+        pij_values = (alpha[nonzero_i] * A[nonzero_i, nonzero_j] * beta[nonzero_j]).astype(np.float32)
+        sparse_df = pd.DataFrame({
+            'node_i_id': [node_ids_int[i] for i in nonzero_i],
+            'node_j_id': [node_ids_int[j] for j in nonzero_j],
+            'pij_value': pij_values
+        })
+        sparse_file = os.path.join(sample_vectors_dir, f"{sample_name}_P_matrix_sparse.csv")
+        sparse_df.to_csv(sparse_file, index=False)
+        print(f"P矩阵（稀疏）已保存: {sparse_file} ({len(sparse_df)} 个非零元素)")
+
+        # 保存MCE摘要（用于断点续跑时快速读取）
+        mce_summary = pd.DataFrame([{
+            'sample_name': sample_name,
+            'mce': mce_value,
+            'max_mce': max_mce,
+            'normalized_mce': normalized_mce
+        }])
+        mce_summary.to_csv(mce_summary_file, index=False)
+        print(f"MCE摘要已保存: {mce_summary_file}")
+
+        return normalized_mce, expression_cache
+
+    except Exception as e:
+        print(f"计算样本MCE并保存向量时出错: {e}")
+        traceback.print_exc()
+        return None, None
+
+
 def calculate_mce_for_pathway(G, sample_name, cached_expression_data=None):
     """
     计算单个通路的MCE值
@@ -1081,11 +1209,11 @@ def calculate_mce_for_pathway(G, sample_name, cached_expression_data=None):
         # 获取基因表达量数据
         # 根据样本类型选择表达量文件
         if "LUSC" in sample_name:
-            expression_file = "../Data/expression/TCGA-LUSC.star_fpkm_processed.tsv"
+            expression_file = os.path.join(DATA_01_DIR, "expression", "TCGA-LUSC.star_fpkm_processed.tsv")
         else:
-            expression_file = "../Data/expression/TCGA-LUAD.star_fpkm_processed.tsv"
+            expression_file = os.path.join(DATA_01_DIR, "expression", "TCGA-LUAD.star_fpkm_processed.tsv")
             
-        dictionary_file = "../Data/gene_id_dictionary_unique.csv"
+        dictionary_file = os.path.join(DATA_01_DIR, "gene_id_dictionary_unique.csv")
         
         # 传递样本名称和缓存数据给get_expression_data函数
         nodes_expression, updated_cache = get_expression_data_for_mce(G, expression_file, dictionary_file, sample_name, cached_expression_data)
@@ -1157,7 +1285,7 @@ def process_pathway_networks(sample_network_file, output_dir, sample_name, pathw
     ensure_directory(output_dir)
     
     # 确保MCE结果目录存在
-    mce_output_dir = "../Data/Pathway_MCE"
+    mce_output_dir = os.path.join(DATA_01_DIR, "Pathway_MCE")
     ensure_directory(mce_output_dir)
     
     # 创建MCE结果文件路径
@@ -1166,27 +1294,9 @@ def process_pathway_networks(sample_network_file, output_dir, sample_name, pathw
     
     # 为表达数据创建缓存
     expression_data_cache = None
-    
-    # 加载样本网络的归一化MCE值
+
+    # sample_network_mce 将在加载样本网络后由 compute_sample_mce_and_save_vectors 直接计算
     sample_network_mce = None
-    sample_network_mce_file = "../Data/LUAD_MCE.csv"
-    if os.path.exists(sample_network_mce_file):
-        try:
-            sample_mce_df = pd.read_csv(sample_network_mce_file)
-            # 查找当前样本的MCE值
-            for _, row in sample_mce_df.iterrows():
-                if row['sample_id'] == sample_name:
-                    sample_network_mce = row['normalized_mce']
-                    print(f"找到样本 {sample_name} 的归一化MCE值: {sample_network_mce}")
-                    break
-            
-            if sample_network_mce is None:
-                print(f"警告: 在Hsa_teat.csv中未找到样本 {sample_name} 的归一化MCE值")
-        except Exception as e:
-            print(f"读取样本网络MCE文件出错: {e}")
-            sample_network_mce = None
-    else:
-        print(f"警告: 样本网络MCE文件不存在: {sample_network_mce_file}")
     
     # 如果MCE结果文件已存在，加载已有结果
     if os.path.exists(mce_result_file):
@@ -1236,7 +1346,20 @@ def process_pathway_networks(sample_network_file, output_dir, sample_name, pathw
     # 样本网络中的节点ID集合（都是字符串类型）
     sample_node_ids = set(sample_network.nodes())
     print(f"样本网络中的节点ID示例: {list(sample_node_ids)[:5]}")
-    
+
+    # 直接计算样本网络MCE，并保存π向量、P矩阵、节点映射文件
+    vectors_output_dir = os.path.join(DATA_01_DIR, "Sample_MCE_Vectors")
+    ensure_directory(vectors_output_dir)
+    sample_network_mce, expr_cache = compute_sample_mce_and_save_vectors(
+        sample_network, sample_name, vectors_output_dir
+    )
+    if expr_cache is not None:
+        expression_data_cache = expr_cache
+    if sample_network_mce is not None:
+        print(f"样本 {sample_name} 的归一化MCE值: {sample_network_mce:.6f}")
+    else:
+        print(f"警告: 无法计算样本 {sample_name} 的MCE值")
+
     # 读取通路基因ID文件
     print(f"正在读取通路基因ID文件: {pathway_gene_ids_file}")
     try:
@@ -1672,10 +1795,10 @@ def main():
         print(f"GPU内存: {torch.cuda.get_device_properties(0).total_memory / (1024**3):.2f} GB")
         print(f"CUDA版本: {torch.version.cuda}")
     
-    # 检查必要的目录和文件（相对路径，相对于Code目录）
-    luad_dir = "/Users/erjin/Desktop/论文数据/code/MASS-path-main/Data/LUAD"
-    results_base_dir = "../Data/Final_pathway"
-    pathway_gene_ids_file = "/Users/erjin/Desktop/论文数据/code/MASS-path-main/Data/pathway_gene_ids.csv"
+    # 基于脚本位置的相对路径
+    luad_dir = os.path.join(DATA_01_DIR, "LUAD")
+    results_base_dir = os.path.join(DATA_01_DIR, "Final_pathway")
+    pathway_gene_ids_file = os.path.join(DATA_01_DIR, "pathway_gene_ids.csv")
     
     # 确保基础结果目录存在
     ensure_directory(results_base_dir)

@@ -1,0 +1,561 @@
+drug_id,drug_name,gene_id,gene_symbol,pathway_id,pathway_name
+D00491,Paclitaxel,0_TUBB,TUBB,hsa04145,Phagosome
+D00491,Paclitaxel,0_TUBB,TUBB,hsa05132,Salmonella infection
+D00491,Paclitaxel,0_TUBB,TUBB,hsa01100,Metabolic pathways
+D01155,Gemcitabine hydrochloride,6240,RRM1,hsa00240,Pyrimidine metabolism
+D01935,Vinorelbine tartrate,0_TUBB,TUBB,hsa04145,Phagosome
+D01935,Vinorelbine tartrate,0_TUBB,TUBB,hsa05132,Salmonella infection
+D01935,Vinorelbine tartrate,0_TUBB,TUBB,hsa01100,Metabolic pathways
+D01977,Gefitinib,1956,EGFR,hsa04010,MAPK signaling pathway
+D01977,Gefitinib,1956,EGFR,hsa04020,Calcium signaling pathway
+D01977,Gefitinib,1956,EGFR,hsa04151,PI3K-Akt signaling pathway
+D01977,Gefitinib,1956,EGFR,hsa04510,Focal adhesion
+D01977,Gefitinib,1956,EGFR,hsa04630,JAK-STAT signaling pathway
+D01977,Gefitinib,1956,EGFR,hsa04912,GnRH signaling pathway
+D01977,Gefitinib,1956,EGFR,hsa04928,"Parathyroid hormone synthesis, secretion and action"
+D01977,Gefitinib,1956,EGFR,hsa04934,Cushing syndrome
+D01977,Gefitinib,1956,EGFR,hsa05120,Epithelial cell signaling in Helicobacter pylori infection
+D01977,Gefitinib,1956,EGFR,hsa05165,Human papillomavirus infection
+D01977,Gefitinib,1956,EGFR,hsa05171,Coronavirus disease - COVID-19
+D01977,Gefitinib,1956,EGFR,hsa05200,Pathways in cancer
+D01977,Gefitinib,1956,EGFR,hsa05205,Proteoglycans in cancer
+D01977,Gefitinib,1956,EGFR,hsa05215,Prostate cancer
+D01977,Gefitinib,1956,EGFR,hsa05219,Bladder cancer
+D01977,Gefitinib,1956,EGFR,hsa05224,Breast cancer
+D01977,Gefitinib,1956,EGFR,hsa05225,Hepatocellular carcinoma
+D01977,Gefitinib,1956,EGFR,hsa05226,Gastric cancer
+D01977,Gefitinib,1956,EGFR,hsa05231,Choline metabolism in cancer
+D01977,Gefitinib,1956,EGFR,hsa05235,PD-L1 expression and PD-1 checkpoint pathway in cancer
+D02115,Methotrexate sodium,1719,DHFR,hsa01100,Metabolic pathways
+D02165,Docetaxel,0_TUBB,TUBB,hsa04145,Phagosome
+D02165,Docetaxel,0_TUBB,TUBB,hsa05132,Salmonella infection
+D02165,Docetaxel,0_TUBB,TUBB,hsa01100,Metabolic pathways
+D04023,Erlotinib hydrochloride,1956,EGFR,hsa04010,MAPK signaling pathway
+D04023,Erlotinib hydrochloride,1956,EGFR,hsa04020,Calcium signaling pathway
+D04023,Erlotinib hydrochloride,1956,EGFR,hsa04151,PI3K-Akt signaling pathway
+D04023,Erlotinib hydrochloride,1956,EGFR,hsa04510,Focal adhesion
+D04023,Erlotinib hydrochloride,1956,EGFR,hsa04630,JAK-STAT signaling pathway
+D04023,Erlotinib hydrochloride,1956,EGFR,hsa04912,GnRH signaling pathway
+D04023,Erlotinib hydrochloride,1956,EGFR,hsa04928,"Parathyroid hormone synthesis, secretion and action"
+D04023,Erlotinib hydrochloride,1956,EGFR,hsa04934,Cushing syndrome
+D04023,Erlotinib hydrochloride,1956,EGFR,hsa05120,Epithelial cell signaling in Helicobacter pylori infection
+D04023,Erlotinib hydrochloride,1956,EGFR,hsa05165,Human papillomavirus infection
+D04023,Erlotinib hydrochloride,1956,EGFR,hsa05171,Coronavirus disease - COVID-19
+D04023,Erlotinib hydrochloride,1956,EGFR,hsa05200,Pathways in cancer
+D04023,Erlotinib hydrochloride,1956,EGFR,hsa05205,Proteoglycans in cancer
+D04023,Erlotinib hydrochloride,1956,EGFR,hsa05215,Prostate cancer
+D04023,Erlotinib hydrochloride,1956,EGFR,hsa05219,Bladder cancer
+D04023,Erlotinib hydrochloride,1956,EGFR,hsa05224,Breast cancer
+D04023,Erlotinib hydrochloride,1956,EGFR,hsa05225,Hepatocellular carcinoma
+D04023,Erlotinib hydrochloride,1956,EGFR,hsa05226,Gastric cancer
+D04023,Erlotinib hydrochloride,1956,EGFR,hsa05231,Choline metabolism in cancer
+D04023,Erlotinib hydrochloride,1956,EGFR,hsa05235,PD-L1 expression and PD-1 checkpoint pathway in cancer
+D06409,Bevacizumab,7422,VEGFA,hsa04010,MAPK signaling pathway
+D06409,Bevacizumab,7422,VEGFA,hsa04020,Calcium signaling pathway
+D06409,Bevacizumab,7422,VEGFA,hsa04151,PI3K-Akt signaling pathway
+D06409,Bevacizumab,7422,VEGFA,hsa04510,Focal adhesion
+D06409,Bevacizumab,7422,VEGFA,hsa05165,Human papillomavirus infection
+D06409,Bevacizumab,7422,VEGFA,hsa05167,Kaposi sarcoma-associated herpesvirus infection
+D06409,Bevacizumab,7422,VEGFA,hsa05200,Pathways in cancer
+D06409,Bevacizumab,7422,VEGFA,hsa05205,Proteoglycans in cancer
+D06503,Pemetrexed sodium hydrate,1719,DHFR,hsa01100,Metabolic pathways
+D06503,Pemetrexed sodium hydrate,2618,GART,,
+D06503,Pemetrexed sodium hydrate,7298,TYMS,hsa00240,Pyrimidine metabolism
+D06657,Tremelimumab,1493,CTLA4,hsa04660,T cell receptor signaling pathway
+D07866,Docetaxel,0_TUBB,TUBB,hsa04145,Phagosome
+D07866,Docetaxel,0_TUBB,TUBB,hsa05132,Salmonella infection
+D07866,Docetaxel,0_TUBB,TUBB,hsa01100,Metabolic pathways
+D09371,Ramucirumab,3791,KDR,hsa04010,MAPK signaling pathway
+D09371,Ramucirumab,3791,KDR,hsa04020,Calcium signaling pathway
+D09371,Ramucirumab,3791,KDR,hsa04151,PI3K-Akt signaling pathway
+D09371,Ramucirumab,3791,KDR,hsa04510,Focal adhesion
+D09371,Ramucirumab,3791,KDR,hsa05205,Proteoglycans in cancer
+D09731,Crizotinib,238,ALK,hsa01100,Metabolic pathways
+D09731,Crizotinib,238,ALK,hsa05200,Pathways in cancer
+D09731,Crizotinib,238,ALK,hsa05235,PD-L1 expression and PD-1 checkpoint pathway in cancer
+D09731,Crizotinib,6098,ROS1,,
+D09733,Afatinib dimaleate,1956,EGFR,hsa04010,MAPK signaling pathway
+D09733,Afatinib dimaleate,1956,EGFR,hsa04020,Calcium signaling pathway
+D09733,Afatinib dimaleate,1956,EGFR,hsa04151,PI3K-Akt signaling pathway
+D09733,Afatinib dimaleate,1956,EGFR,hsa04510,Focal adhesion
+D09733,Afatinib dimaleate,1956,EGFR,hsa04630,JAK-STAT signaling pathway
+D09733,Afatinib dimaleate,1956,EGFR,hsa04912,GnRH signaling pathway
+D09733,Afatinib dimaleate,1956,EGFR,hsa04928,"Parathyroid hormone synthesis, secretion and action"
+D09733,Afatinib dimaleate,1956,EGFR,hsa04934,Cushing syndrome
+D09733,Afatinib dimaleate,1956,EGFR,hsa05120,Epithelial cell signaling in Helicobacter pylori infection
+D09733,Afatinib dimaleate,1956,EGFR,hsa05165,Human papillomavirus infection
+D09733,Afatinib dimaleate,1956,EGFR,hsa05171,Coronavirus disease - COVID-19
+D09733,Afatinib dimaleate,1956,EGFR,hsa05200,Pathways in cancer
+D09733,Afatinib dimaleate,1956,EGFR,hsa05205,Proteoglycans in cancer
+D09733,Afatinib dimaleate,1956,EGFR,hsa05215,Prostate cancer
+D09733,Afatinib dimaleate,1956,EGFR,hsa05219,Bladder cancer
+D09733,Afatinib dimaleate,1956,EGFR,hsa05224,Breast cancer
+D09733,Afatinib dimaleate,1956,EGFR,hsa05225,Hepatocellular carcinoma
+D09733,Afatinib dimaleate,1956,EGFR,hsa05226,Gastric cancer
+D09733,Afatinib dimaleate,1956,EGFR,hsa05231,Choline metabolism in cancer
+D09733,Afatinib dimaleate,1956,EGFR,hsa05235,PD-L1 expression and PD-1 checkpoint pathway in cancer
+D09733,Afatinib dimaleate,2064,ERBB2,hsa01100,Metabolic pathways
+D09733,Afatinib dimaleate,2064,ERBB2,hsa04010,MAPK signaling pathway
+D09733,Afatinib dimaleate,2064,ERBB2,hsa04020,Calcium signaling pathway
+D09733,Afatinib dimaleate,2064,ERBB2,hsa04151,PI3K-Akt signaling pathway
+D09733,Afatinib dimaleate,2064,ERBB2,hsa04510,Focal adhesion
+D09733,Afatinib dimaleate,2064,ERBB2,hsa05200,Pathways in cancer
+D09733,Afatinib dimaleate,2064,ERBB2,hsa05205,Proteoglycans in cancer
+D09733,Afatinib dimaleate,2064,ERBB2,hsa05215,Prostate cancer
+D09733,Afatinib dimaleate,2064,ERBB2,hsa05219,Bladder cancer
+D09733,Afatinib dimaleate,2064,ERBB2,hsa05224,Breast cancer
+D09733,Afatinib dimaleate,2064,ERBB2,hsa05226,Gastric cancer
+D09733,Afatinib dimaleate,2066,ERBB4,hsa04010,MAPK signaling pathway
+D09733,Afatinib dimaleate,2066,ERBB4,hsa04020,Calcium signaling pathway
+D09733,Afatinib dimaleate,2066,ERBB4,hsa04151,PI3K-Akt signaling pathway
+D09733,Afatinib dimaleate,2066,ERBB4,hsa05205,Proteoglycans in cancer
+D10018,Necitumumab,1956,EGFR,hsa04010,MAPK signaling pathway
+D10018,Necitumumab,1956,EGFR,hsa04020,Calcium signaling pathway
+D10018,Necitumumab,1956,EGFR,hsa04151,PI3K-Akt signaling pathway
+D10018,Necitumumab,1956,EGFR,hsa04510,Focal adhesion
+D10018,Necitumumab,1956,EGFR,hsa04630,JAK-STAT signaling pathway
+D10018,Necitumumab,1956,EGFR,hsa04912,GnRH signaling pathway
+D10018,Necitumumab,1956,EGFR,hsa04928,"Parathyroid hormone synthesis, secretion and action"
+D10018,Necitumumab,1956,EGFR,hsa04934,Cushing syndrome
+D10018,Necitumumab,1956,EGFR,hsa05120,Epithelial cell signaling in Helicobacter pylori infection
+D10018,Necitumumab,1956,EGFR,hsa05165,Human papillomavirus infection
+D10018,Necitumumab,1956,EGFR,hsa05171,Coronavirus disease - COVID-19
+D10018,Necitumumab,1956,EGFR,hsa05200,Pathways in cancer
+D10018,Necitumumab,1956,EGFR,hsa05205,Proteoglycans in cancer
+D10018,Necitumumab,1956,EGFR,hsa05215,Prostate cancer
+D10018,Necitumumab,1956,EGFR,hsa05219,Bladder cancer
+D10018,Necitumumab,1956,EGFR,hsa05224,Breast cancer
+D10018,Necitumumab,1956,EGFR,hsa05225,Hepatocellular carcinoma
+D10018,Necitumumab,1956,EGFR,hsa05226,Gastric cancer
+D10018,Necitumumab,1956,EGFR,hsa05231,Choline metabolism in cancer
+D10018,Necitumumab,1956,EGFR,hsa05235,PD-L1 expression and PD-1 checkpoint pathway in cancer
+D10104,Dabrafenib mesylate,673,BRAF,hsa04010,MAPK signaling pathway
+D10104,Dabrafenib mesylate,673,BRAF,hsa04024,cAMP signaling pathway
+D10104,Dabrafenib mesylate,673,BRAF,hsa04270,Vascular smooth muscle contraction
+D10104,Dabrafenib mesylate,673,BRAF,hsa04510,Focal adhesion
+D10104,Dabrafenib mesylate,673,BRAF,hsa04650,Natural killer cell mediated cytotoxicity
+D10104,Dabrafenib mesylate,673,BRAF,hsa04720,Long-term potentiation
+D10104,Dabrafenib mesylate,673,BRAF,hsa04914,Progesterone-mediated oocyte maturation
+D10104,Dabrafenib mesylate,673,BRAF,hsa04928,"Parathyroid hormone synthesis, secretion and action"
+D10104,Dabrafenib mesylate,673,BRAF,hsa04934,Cushing syndrome
+D10104,Dabrafenib mesylate,673,BRAF,hsa05161,Hepatitis B
+D10104,Dabrafenib mesylate,673,BRAF,hsa05200,Pathways in cancer
+D10104,Dabrafenib mesylate,673,BRAF,hsa05205,Proteoglycans in cancer
+D10104,Dabrafenib mesylate,673,BRAF,hsa05215,Prostate cancer
+D10104,Dabrafenib mesylate,673,BRAF,hsa05219,Bladder cancer
+D10104,Dabrafenib mesylate,673,BRAF,hsa05221,Acute myeloid leukemia
+D10104,Dabrafenib mesylate,673,BRAF,hsa05224,Breast cancer
+D10104,Dabrafenib mesylate,673,BRAF,hsa05225,Hepatocellular carcinoma
+D10104,Dabrafenib mesylate,673,BRAF,hsa05226,Gastric cancer
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa01100,Metabolic pathways
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa04010,MAPK signaling pathway
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa04022,cGMP-PKG signaling pathway
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa04024,cAMP signaling pathway
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa04140,Autophagy - animal
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa04148,Efferocytosis
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa04151,PI3K-Akt signaling pathway
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa04270,Vascular smooth muscle contraction
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa04380,Osteoclast differentiation
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa04510,Focal adhesion
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa04613,Neutrophil extracellular trap formation
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa04650,Natural killer cell mediated cytotoxicity
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa04660,T cell receptor signaling pathway
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa04720,Long-term potentiation
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa04912,GnRH signaling pathway
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa04914,Progesterone-mediated oocyte maturation
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa04916,Melanogenesis
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa04928,"Parathyroid hormone synthesis, secretion and action"
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa04934,Cushing syndrome
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa05132,Salmonella infection
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa05161,Hepatitis B
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa05164,Influenza A
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa05165,Human papillomavirus infection
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa05167,Kaposi sarcoma-associated herpesvirus infection
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa05170,Human immunodeficiency virus 1 infection
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa05200,Pathways in cancer
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa05205,Proteoglycans in cancer
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa05215,Prostate cancer
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa05219,Bladder cancer
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa05221,Acute myeloid leukemia
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa05224,Breast cancer
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa05225,Hepatocellular carcinoma
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa05226,Gastric cancer
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa05231,Choline metabolism in cancer
+D10176,Trametinib dimethyl sulfoxide,5604,MAP2K1,hsa05235,PD-L1 expression and PD-1 checkpoint pathway in cancer
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa04010,MAPK signaling pathway
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa04022,cGMP-PKG signaling pathway
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa04024,cAMP signaling pathway
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa04140,Autophagy - animal
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa04148,Efferocytosis
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa04151,PI3K-Akt signaling pathway
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa04270,Vascular smooth muscle contraction
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa04613,Neutrophil extracellular trap formation
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa04650,Natural killer cell mediated cytotoxicity
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa04660,T cell receptor signaling pathway
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa04720,Long-term potentiation
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa04912,GnRH signaling pathway
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa04916,Melanogenesis
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa04934,Cushing syndrome
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa05132,Salmonella infection
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa05161,Hepatitis B
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa05164,Influenza A
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa05165,Human papillomavirus infection
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa05167,Kaposi sarcoma-associated herpesvirus infection
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa05170,Human immunodeficiency virus 1 infection
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa05200,Pathways in cancer
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa05205,Proteoglycans in cancer
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa05215,Prostate cancer
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa05219,Bladder cancer
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa05221,Acute myeloid leukemia
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa05224,Breast cancer
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa05225,Hepatocellular carcinoma
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa05226,Gastric cancer
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa05231,Choline metabolism in cancer
+D10176,Trametinib dimethyl sulfoxide,5605,MAP2K2,hsa05235,PD-L1 expression and PD-1 checkpoint pathway in cancer
+D10316,Nivolumab,5133,PDCD1,hsa04660,T cell receptor signaling pathway
+D10316,Nivolumab,5133,PDCD1,hsa05235,PD-L1 expression and PD-1 checkpoint pathway in cancer
+D10450,Alectinib hydrochloride,238,ALK,hsa01100,Metabolic pathways
+D10450,Alectinib hydrochloride,238,ALK,hsa05200,Pathways in cancer
+D10450,Alectinib hydrochloride,238,ALK,hsa05235,PD-L1 expression and PD-1 checkpoint pathway in cancer
+D10514,Dacomitinib,1956,EGFR,hsa04010,MAPK signaling pathway
+D10514,Dacomitinib,1956,EGFR,hsa04020,Calcium signaling pathway
+D10514,Dacomitinib,1956,EGFR,hsa04151,PI3K-Akt signaling pathway
+D10514,Dacomitinib,1956,EGFR,hsa04510,Focal adhesion
+D10514,Dacomitinib,1956,EGFR,hsa04630,JAK-STAT signaling pathway
+D10514,Dacomitinib,1956,EGFR,hsa04912,GnRH signaling pathway
+D10514,Dacomitinib,1956,EGFR,hsa04928,"Parathyroid hormone synthesis, secretion and action"
+D10514,Dacomitinib,1956,EGFR,hsa04934,Cushing syndrome
+D10514,Dacomitinib,1956,EGFR,hsa05120,Epithelial cell signaling in Helicobacter pylori infection
+D10514,Dacomitinib,1956,EGFR,hsa05165,Human papillomavirus infection
+D10514,Dacomitinib,1956,EGFR,hsa05171,Coronavirus disease - COVID-19
+D10514,Dacomitinib,1956,EGFR,hsa05200,Pathways in cancer
+D10514,Dacomitinib,1956,EGFR,hsa05205,Proteoglycans in cancer
+D10514,Dacomitinib,1956,EGFR,hsa05215,Prostate cancer
+D10514,Dacomitinib,1956,EGFR,hsa05219,Bladder cancer
+D10514,Dacomitinib,1956,EGFR,hsa05224,Breast cancer
+D10514,Dacomitinib,1956,EGFR,hsa05225,Hepatocellular carcinoma
+D10514,Dacomitinib,1956,EGFR,hsa05226,Gastric cancer
+D10514,Dacomitinib,1956,EGFR,hsa05231,Choline metabolism in cancer
+D10514,Dacomitinib,1956,EGFR,hsa05235,PD-L1 expression and PD-1 checkpoint pathway in cancer
+D10514,Dacomitinib,2064,ERBB2,hsa01100,Metabolic pathways
+D10514,Dacomitinib,2064,ERBB2,hsa04010,MAPK signaling pathway
+D10514,Dacomitinib,2064,ERBB2,hsa04020,Calcium signaling pathway
+D10514,Dacomitinib,2064,ERBB2,hsa04151,PI3K-Akt signaling pathway
+D10514,Dacomitinib,2064,ERBB2,hsa04510,Focal adhesion
+D10514,Dacomitinib,2064,ERBB2,hsa05200,Pathways in cancer
+D10514,Dacomitinib,2064,ERBB2,hsa05205,Proteoglycans in cancer
+D10514,Dacomitinib,2064,ERBB2,hsa05215,Prostate cancer
+D10514,Dacomitinib,2064,ERBB2,hsa05219,Bladder cancer
+D10514,Dacomitinib,2064,ERBB2,hsa05224,Breast cancer
+D10514,Dacomitinib,2064,ERBB2,hsa05226,Gastric cancer
+D10514,Dacomitinib,2066,ERBB4,hsa04010,MAPK signaling pathway
+D10514,Dacomitinib,2066,ERBB4,hsa04020,Calcium signaling pathway
+D10514,Dacomitinib,2066,ERBB4,hsa04151,PI3K-Akt signaling pathway
+D10514,Dacomitinib,2066,ERBB4,hsa05205,Proteoglycans in cancer
+D10551,Ceritinib,238,ALK,hsa01100,Metabolic pathways
+D10551,Ceritinib,238,ALK,hsa05200,Pathways in cancer
+D10551,Ceritinib,238,ALK,hsa05235,PD-L1 expression and PD-1 checkpoint pathway in cancer
+D10574,Pembrolizumab,5133,PDCD1,hsa04660,T cell receptor signaling pathway
+D10574,Pembrolizumab,5133,PDCD1,hsa05235,PD-L1 expression and PD-1 checkpoint pathway in cancer
+D10766,Osimertinib mesylate,1956,EGFR,hsa04010,MAPK signaling pathway
+D10766,Osimertinib mesylate,1956,EGFR,hsa04020,Calcium signaling pathway
+D10766,Osimertinib mesylate,1956,EGFR,hsa04151,PI3K-Akt signaling pathway
+D10766,Osimertinib mesylate,1956,EGFR,hsa04510,Focal adhesion
+D10766,Osimertinib mesylate,1956,EGFR,hsa04630,JAK-STAT signaling pathway
+D10766,Osimertinib mesylate,1956,EGFR,hsa04912,GnRH signaling pathway
+D10766,Osimertinib mesylate,1956,EGFR,hsa04928,"Parathyroid hormone synthesis, secretion and action"
+D10766,Osimertinib mesylate,1956,EGFR,hsa04934,Cushing syndrome
+D10766,Osimertinib mesylate,1956,EGFR,hsa05120,Epithelial cell signaling in Helicobacter pylori infection
+D10766,Osimertinib mesylate,1956,EGFR,hsa05165,Human papillomavirus infection
+D10766,Osimertinib mesylate,1956,EGFR,hsa05171,Coronavirus disease - COVID-19
+D10766,Osimertinib mesylate,1956,EGFR,hsa05200,Pathways in cancer
+D10766,Osimertinib mesylate,1956,EGFR,hsa05205,Proteoglycans in cancer
+D10766,Osimertinib mesylate,1956,EGFR,hsa05215,Prostate cancer
+D10766,Osimertinib mesylate,1956,EGFR,hsa05219,Bladder cancer
+D10766,Osimertinib mesylate,1956,EGFR,hsa05224,Breast cancer
+D10766,Osimertinib mesylate,1956,EGFR,hsa05225,Hepatocellular carcinoma
+D10766,Osimertinib mesylate,1956,EGFR,hsa05226,Gastric cancer
+D10766,Osimertinib mesylate,1956,EGFR,hsa05231,Choline metabolism in cancer
+D10766,Osimertinib mesylate,1956,EGFR,hsa05235,PD-L1 expression and PD-1 checkpoint pathway in cancer
+D10773,Atezolizumab,29126,CD274,hsa05235,PD-L1 expression and PD-1 checkpoint pathway in cancer
+D10808,Durvalumab,29126,CD274,hsa05235,PD-L1 expression and PD-1 checkpoint pathway in cancer
+D10866,Brigatinib,238,ALK,hsa01100,Metabolic pathways
+D10866,Brigatinib,238,ALK,hsa05200,Pathways in cancer
+D10866,Brigatinib,238,ALK,hsa05235,PD-L1 expression and PD-1 checkpoint pathway in cancer
+D10891,Capmatinib hydrochloride,4233,MET,hsa01100,Metabolic pathways
+D10891,Capmatinib hydrochloride,4233,MET,hsa04010,MAPK signaling pathway
+D10891,Capmatinib hydrochloride,4233,MET,hsa04020,Calcium signaling pathway
+D10891,Capmatinib hydrochloride,4233,MET,hsa04151,PI3K-Akt signaling pathway
+D10891,Capmatinib hydrochloride,4233,MET,hsa04510,Focal adhesion
+D10891,Capmatinib hydrochloride,4233,MET,hsa05144,Malaria
+D10891,Capmatinib hydrochloride,4233,MET,hsa05200,Pathways in cancer
+D10891,Capmatinib hydrochloride,4233,MET,hsa05205,Proteoglycans in cancer
+D10891,Capmatinib hydrochloride,4233,MET,hsa05225,Hepatocellular carcinoma
+D10891,Capmatinib hydrochloride,4233,MET,hsa05226,Gastric cancer
+D10926,Entrectinib,238,ALK,hsa01100,Metabolic pathways
+D10926,Entrectinib,238,ALK,hsa05200,Pathways in cancer
+D10926,Entrectinib,238,ALK,hsa05235,PD-L1 expression and PD-1 checkpoint pathway in cancer
+D10926,Entrectinib,4914,NTRK1,hsa01100,Metabolic pathways
+D10926,Entrectinib,4914,NTRK1,hsa04010,MAPK signaling pathway
+D10926,Entrectinib,4914,NTRK1,hsa04020,Calcium signaling pathway
+D10926,Entrectinib,4914,NTRK1,hsa04151,PI3K-Akt signaling pathway
+D10926,Entrectinib,4914,NTRK1,hsa05200,Pathways in cancer
+D10926,Entrectinib,4915,NTRK2,hsa01100,Metabolic pathways
+D10926,Entrectinib,4915,NTRK2,hsa04010,MAPK signaling pathway
+D10926,Entrectinib,4915,NTRK2,hsa04020,Calcium signaling pathway
+D10926,Entrectinib,4915,NTRK2,hsa04151,PI3K-Akt signaling pathway
+D10926,Entrectinib,4916,NTRK3,hsa04020,Calcium signaling pathway
+D10926,Entrectinib,6098,ROS1,,
+D11012,Lorlatinib,238,ALK,hsa01100,Metabolic pathways
+D11012,Lorlatinib,238,ALK,hsa05200,Pathways in cancer
+D11012,Lorlatinib,238,ALK,hsa05235,PD-L1 expression and PD-1 checkpoint pathway in cancer
+D11012,Lorlatinib,6098,ROS1,,
+D11073,Tepotinib hydrochloride,4233,MET,hsa01100,Metabolic pathways
+D11073,Tepotinib hydrochloride,4233,MET,hsa04010,MAPK signaling pathway
+D11073,Tepotinib hydrochloride,4233,MET,hsa04020,Calcium signaling pathway
+D11073,Tepotinib hydrochloride,4233,MET,hsa04151,PI3K-Akt signaling pathway
+D11073,Tepotinib hydrochloride,4233,MET,hsa04510,Focal adhesion
+D11073,Tepotinib hydrochloride,4233,MET,hsa05144,Malaria
+D11073,Tepotinib hydrochloride,4233,MET,hsa05200,Pathways in cancer
+D11073,Tepotinib hydrochloride,4233,MET,hsa05205,Proteoglycans in cancer
+D11073,Tepotinib hydrochloride,4233,MET,hsa05225,Hepatocellular carcinoma
+D11073,Tepotinib hydrochloride,4233,MET,hsa05226,Gastric cancer
+D11108,Cemiplimab,5133,PDCD1,hsa04660,T cell receptor signaling pathway
+D11108,Cemiplimab,5133,PDCD1,hsa05235,PD-L1 expression and PD-1 checkpoint pathway in cancer
+D11344,Telisotuzumab vedotin,4233,MET,hsa01100,Metabolic pathways
+D11344,Telisotuzumab vedotin,4233,MET,hsa04010,MAPK signaling pathway
+D11344,Telisotuzumab vedotin,4233,MET,hsa04020,Calcium signaling pathway
+D11344,Telisotuzumab vedotin,4233,MET,hsa04151,PI3K-Akt signaling pathway
+D11344,Telisotuzumab vedotin,4233,MET,hsa04510,Focal adhesion
+D11344,Telisotuzumab vedotin,4233,MET,hsa05144,Malaria
+D11344,Telisotuzumab vedotin,4233,MET,hsa05200,Pathways in cancer
+D11344,Telisotuzumab vedotin,4233,MET,hsa05205,Proteoglycans in cancer
+D11344,Telisotuzumab vedotin,4233,MET,hsa05225,Hepatocellular carcinoma
+D11344,Telisotuzumab vedotin,4233,MET,hsa05226,Gastric cancer
+D11352,Pemetrexed tromethamine,1719,DHFR,hsa01100,Metabolic pathways
+D11352,Pemetrexed tromethamine,2618,GART,,
+D11352,Pemetrexed tromethamine,7298,TYMS,hsa00240,Pyrimidine metabolism
+D11356,Ensartinib hydrochloride,238,ALK,hsa01100,Metabolic pathways
+D11356,Ensartinib hydrochloride,238,ALK,hsa05200,Pathways in cancer
+D11356,Ensartinib hydrochloride,238,ALK,hsa05235,PD-L1 expression and PD-1 checkpoint pathway in cancer
+D11454,Repotrectinib,4914,NTRK1,hsa01100,Metabolic pathways
+D11454,Repotrectinib,4914,NTRK1,hsa04010,MAPK signaling pathway
+D11454,Repotrectinib,4914,NTRK1,hsa04020,Calcium signaling pathway
+D11454,Repotrectinib,4914,NTRK1,hsa04151,PI3K-Akt signaling pathway
+D11454,Repotrectinib,4914,NTRK1,hsa05200,Pathways in cancer
+D11454,Repotrectinib,4915,NTRK2,hsa01100,Metabolic pathways
+D11454,Repotrectinib,4915,NTRK2,hsa04010,MAPK signaling pathway
+D11454,Repotrectinib,4915,NTRK2,hsa04020,Calcium signaling pathway
+D11454,Repotrectinib,4915,NTRK2,hsa04151,PI3K-Akt signaling pathway
+D11454,Repotrectinib,4916,NTRK3,hsa04020,Calcium signaling pathway
+D11454,Repotrectinib,6098,ROS1,,
+D11529,Trastuzumab deruxtecan,2064,ERBB2,hsa01100,Metabolic pathways
+D11529,Trastuzumab deruxtecan,2064,ERBB2,hsa04010,MAPK signaling pathway
+D11529,Trastuzumab deruxtecan,2064,ERBB2,hsa04020,Calcium signaling pathway
+D11529,Trastuzumab deruxtecan,2064,ERBB2,hsa04151,PI3K-Akt signaling pathway
+D11529,Trastuzumab deruxtecan,2064,ERBB2,hsa04510,Focal adhesion
+D11529,Trastuzumab deruxtecan,2064,ERBB2,hsa05200,Pathways in cancer
+D11529,Trastuzumab deruxtecan,2064,ERBB2,hsa05205,Proteoglycans in cancer
+D11529,Trastuzumab deruxtecan,2064,ERBB2,hsa05215,Prostate cancer
+D11529,Trastuzumab deruxtecan,2064,ERBB2,hsa05219,Bladder cancer
+D11529,Trastuzumab deruxtecan,2064,ERBB2,hsa05224,Breast cancer
+D11529,Trastuzumab deruxtecan,2064,ERBB2,hsa05226,Gastric cancer
+D11529,Trastuzumab deruxtecan,7150,TOP1,,
+D11712,Pralsetinib,5979,RET,hsa04010,MAPK signaling pathway
+D11712,Pralsetinib,5979,RET,hsa04020,Calcium signaling pathway
+D11712,Pralsetinib,5979,RET,hsa04151,PI3K-Akt signaling pathway
+D11712,Pralsetinib,5979,RET,hsa05200,Pathways in cancer
+D11713,Selpercatinib,2321,FLT1,hsa04010,MAPK signaling pathway
+D11713,Selpercatinib,2321,FLT1,hsa04020,Calcium signaling pathway
+D11713,Selpercatinib,2321,FLT1,hsa04151,PI3K-Akt signaling pathway
+D11713,Selpercatinib,2321,FLT1,hsa04510,Focal adhesion
+D11713,Selpercatinib,2324,FLT4,hsa04010,MAPK signaling pathway
+D11713,Selpercatinib,2324,FLT4,hsa04020,Calcium signaling pathway
+D11713,Selpercatinib,2324,FLT4,hsa04151,PI3K-Akt signaling pathway
+D11713,Selpercatinib,2324,FLT4,hsa04510,Focal adhesion
+D11713,Selpercatinib,2324,FLT4,hsa05200,Pathways in cancer
+D11713,Selpercatinib,2324,FLT4,hsa05224,Breast cancer
+D11713,Selpercatinib,5979,RET,hsa04010,MAPK signaling pathway
+D11713,Selpercatinib,5979,RET,hsa04020,Calcium signaling pathway
+D11713,Selpercatinib,5979,RET,hsa04151,PI3K-Akt signaling pathway
+D11713,Selpercatinib,5979,RET,hsa05200,Pathways in cancer
+D11894,Amivantamab,1956,EGFR,hsa04010,MAPK signaling pathway
+D11894,Amivantamab,1956,EGFR,hsa04020,Calcium signaling pathway
+D11894,Amivantamab,1956,EGFR,hsa04151,PI3K-Akt signaling pathway
+D11894,Amivantamab,1956,EGFR,hsa04510,Focal adhesion
+D11894,Amivantamab,1956,EGFR,hsa04630,JAK-STAT signaling pathway
+D11894,Amivantamab,1956,EGFR,hsa04912,GnRH signaling pathway
+D11894,Amivantamab,1956,EGFR,hsa04928,"Parathyroid hormone synthesis, secretion and action"
+D11894,Amivantamab,1956,EGFR,hsa04934,Cushing syndrome
+D11894,Amivantamab,1956,EGFR,hsa05120,Epithelial cell signaling in Helicobacter pylori infection
+D11894,Amivantamab,1956,EGFR,hsa05165,Human papillomavirus infection
+D11894,Amivantamab,1956,EGFR,hsa05171,Coronavirus disease - COVID-19
+D11894,Amivantamab,1956,EGFR,hsa05200,Pathways in cancer
+D11894,Amivantamab,1956,EGFR,hsa05205,Proteoglycans in cancer
+D11894,Amivantamab,1956,EGFR,hsa05215,Prostate cancer
+D11894,Amivantamab,1956,EGFR,hsa05219,Bladder cancer
+D11894,Amivantamab,1956,EGFR,hsa05224,Breast cancer
+D11894,Amivantamab,1956,EGFR,hsa05225,Hepatocellular carcinoma
+D11894,Amivantamab,1956,EGFR,hsa05226,Gastric cancer
+D11894,Amivantamab,1956,EGFR,hsa05231,Choline metabolism in cancer
+D11894,Amivantamab,1956,EGFR,hsa05235,PD-L1 expression and PD-1 checkpoint pathway in cancer
+D11894,Amivantamab,4233,MET,hsa01100,Metabolic pathways
+D11894,Amivantamab,4233,MET,hsa04010,MAPK signaling pathway
+D11894,Amivantamab,4233,MET,hsa04020,Calcium signaling pathway
+D11894,Amivantamab,4233,MET,hsa04151,PI3K-Akt signaling pathway
+D11894,Amivantamab,4233,MET,hsa04510,Focal adhesion
+D11894,Amivantamab,4233,MET,hsa05144,Malaria
+D11894,Amivantamab,4233,MET,hsa05200,Pathways in cancer
+D11894,Amivantamab,4233,MET,hsa05205,Proteoglycans in cancer
+D11894,Amivantamab,4233,MET,hsa05225,Hepatocellular carcinoma
+D11894,Amivantamab,4233,MET,hsa05226,Gastric cancer
+D11969,Mobocertinib succinate,1956,EGFR,hsa04010,MAPK signaling pathway
+D11969,Mobocertinib succinate,1956,EGFR,hsa04020,Calcium signaling pathway
+D11969,Mobocertinib succinate,1956,EGFR,hsa04151,PI3K-Akt signaling pathway
+D11969,Mobocertinib succinate,1956,EGFR,hsa04510,Focal adhesion
+D11969,Mobocertinib succinate,1956,EGFR,hsa04630,JAK-STAT signaling pathway
+D11969,Mobocertinib succinate,1956,EGFR,hsa04912,GnRH signaling pathway
+D11969,Mobocertinib succinate,1956,EGFR,hsa04928,"Parathyroid hormone synthesis, secretion and action"
+D11969,Mobocertinib succinate,1956,EGFR,hsa04934,Cushing syndrome
+D11969,Mobocertinib succinate,1956,EGFR,hsa05120,Epithelial cell signaling in Helicobacter pylori infection
+D11969,Mobocertinib succinate,1956,EGFR,hsa05165,Human papillomavirus infection
+D11969,Mobocertinib succinate,1956,EGFR,hsa05171,Coronavirus disease - COVID-19
+D11969,Mobocertinib succinate,1956,EGFR,hsa05200,Pathways in cancer
+D11969,Mobocertinib succinate,1956,EGFR,hsa05205,Proteoglycans in cancer
+D11969,Mobocertinib succinate,1956,EGFR,hsa05215,Prostate cancer
+D11969,Mobocertinib succinate,1956,EGFR,hsa05219,Bladder cancer
+D11969,Mobocertinib succinate,1956,EGFR,hsa05224,Breast cancer
+D11969,Mobocertinib succinate,1956,EGFR,hsa05225,Hepatocellular carcinoma
+D11969,Mobocertinib succinate,1956,EGFR,hsa05226,Gastric cancer
+D11969,Mobocertinib succinate,1956,EGFR,hsa05231,Choline metabolism in cancer
+D11969,Mobocertinib succinate,1956,EGFR,hsa05235,PD-L1 expression and PD-1 checkpoint pathway in cancer
+D11991,Zenocutuzumab,2064,ERBB2,hsa01100,Metabolic pathways
+D11991,Zenocutuzumab,2064,ERBB2,hsa04010,MAPK signaling pathway
+D11991,Zenocutuzumab,2064,ERBB2,hsa04020,Calcium signaling pathway
+D11991,Zenocutuzumab,2064,ERBB2,hsa04151,PI3K-Akt signaling pathway
+D11991,Zenocutuzumab,2064,ERBB2,hsa04510,Focal adhesion
+D11991,Zenocutuzumab,2064,ERBB2,hsa05200,Pathways in cancer
+D11991,Zenocutuzumab,2064,ERBB2,hsa05205,Proteoglycans in cancer
+D11991,Zenocutuzumab,2064,ERBB2,hsa05215,Prostate cancer
+D11991,Zenocutuzumab,2064,ERBB2,hsa05219,Bladder cancer
+D11991,Zenocutuzumab,2064,ERBB2,hsa05224,Breast cancer
+D11991,Zenocutuzumab,2064,ERBB2,hsa05226,Gastric cancer
+D11991,Zenocutuzumab,2065,ERBB3,hsa04010,MAPK signaling pathway
+D11991,Zenocutuzumab,2065,ERBB3,hsa04020,Calcium signaling pathway
+D11991,Zenocutuzumab,2065,ERBB3,hsa04151,PI3K-Akt signaling pathway
+D11991,Zenocutuzumab,2065,ERBB3,hsa05205,Proteoglycans in cancer
+D12055,Sotorasib,3845,KRAS,hsa01100,Metabolic pathways
+D12055,Sotorasib,3845,KRAS,hsa04010,MAPK signaling pathway
+D12055,Sotorasib,3845,KRAS,hsa04140,Autophagy - animal
+D12055,Sotorasib,3845,KRAS,hsa04151,PI3K-Akt signaling pathway
+D12055,Sotorasib,3845,KRAS,hsa04650,Natural killer cell mediated cytotoxicity
+D12055,Sotorasib,3845,KRAS,hsa04660,T cell receptor signaling pathway
+D12055,Sotorasib,3845,KRAS,hsa04720,Long-term potentiation
+D12055,Sotorasib,3845,KRAS,hsa04912,GnRH signaling pathway
+D12055,Sotorasib,3845,KRAS,hsa04914,Progesterone-mediated oocyte maturation
+D12055,Sotorasib,3845,KRAS,hsa04916,Melanogenesis
+D12055,Sotorasib,3845,KRAS,hsa05161,Hepatitis B
+D12055,Sotorasib,3845,KRAS,hsa05165,Human papillomavirus infection
+D12055,Sotorasib,3845,KRAS,hsa05167,Kaposi sarcoma-associated herpesvirus infection
+D12055,Sotorasib,3845,KRAS,hsa05170,Human immunodeficiency virus 1 infection
+D12055,Sotorasib,3845,KRAS,hsa05200,Pathways in cancer
+D12055,Sotorasib,3845,KRAS,hsa05205,Proteoglycans in cancer
+D12055,Sotorasib,3845,KRAS,hsa05215,Prostate cancer
+D12055,Sotorasib,3845,KRAS,hsa05219,Bladder cancer
+D12055,Sotorasib,3845,KRAS,hsa05221,Acute myeloid leukemia
+D12055,Sotorasib,3845,KRAS,hsa05224,Breast cancer
+D12055,Sotorasib,3845,KRAS,hsa05225,Hepatocellular carcinoma
+D12055,Sotorasib,3845,KRAS,hsa05226,Gastric cancer
+D12055,Sotorasib,3845,KRAS,hsa05231,Choline metabolism in cancer
+D12055,Sotorasib,3845,KRAS,hsa05235,PD-L1 expression and PD-1 checkpoint pathway in cancer
+D12245,Lazertinib mesylate,1956,EGFR,hsa04010,MAPK signaling pathway
+D12245,Lazertinib mesylate,1956,EGFR,hsa04020,Calcium signaling pathway
+D12245,Lazertinib mesylate,1956,EGFR,hsa04151,PI3K-Akt signaling pathway
+D12245,Lazertinib mesylate,1956,EGFR,hsa04510,Focal adhesion
+D12245,Lazertinib mesylate,1956,EGFR,hsa04630,JAK-STAT signaling pathway
+D12245,Lazertinib mesylate,1956,EGFR,hsa04912,GnRH signaling pathway
+D12245,Lazertinib mesylate,1956,EGFR,hsa04928,"Parathyroid hormone synthesis, secretion and action"
+D12245,Lazertinib mesylate,1956,EGFR,hsa04934,Cushing syndrome
+D12245,Lazertinib mesylate,1956,EGFR,hsa05120,Epithelial cell signaling in Helicobacter pylori infection
+D12245,Lazertinib mesylate,1956,EGFR,hsa05165,Human papillomavirus infection
+D12245,Lazertinib mesylate,1956,EGFR,hsa05171,Coronavirus disease - COVID-19
+D12245,Lazertinib mesylate,1956,EGFR,hsa05200,Pathways in cancer
+D12245,Lazertinib mesylate,1956,EGFR,hsa05205,Proteoglycans in cancer
+D12245,Lazertinib mesylate,1956,EGFR,hsa05215,Prostate cancer
+D12245,Lazertinib mesylate,1956,EGFR,hsa05219,Bladder cancer
+D12245,Lazertinib mesylate,1956,EGFR,hsa05224,Breast cancer
+D12245,Lazertinib mesylate,1956,EGFR,hsa05225,Hepatocellular carcinoma
+D12245,Lazertinib mesylate,1956,EGFR,hsa05226,Gastric cancer
+D12245,Lazertinib mesylate,1956,EGFR,hsa05231,Choline metabolism in cancer
+D12245,Lazertinib mesylate,1956,EGFR,hsa05235,PD-L1 expression and PD-1 checkpoint pathway in cancer
+D12301,Adagrasib,3845,KRAS,hsa01100,Metabolic pathways
+D12301,Adagrasib,3845,KRAS,hsa04010,MAPK signaling pathway
+D12301,Adagrasib,3845,KRAS,hsa04140,Autophagy - animal
+D12301,Adagrasib,3845,KRAS,hsa04151,PI3K-Akt signaling pathway
+D12301,Adagrasib,3845,KRAS,hsa04650,Natural killer cell mediated cytotoxicity
+D12301,Adagrasib,3845,KRAS,hsa04660,T cell receptor signaling pathway
+D12301,Adagrasib,3845,KRAS,hsa04720,Long-term potentiation
+D12301,Adagrasib,3845,KRAS,hsa04912,GnRH signaling pathway
+D12301,Adagrasib,3845,KRAS,hsa04914,Progesterone-mediated oocyte maturation
+D12301,Adagrasib,3845,KRAS,hsa04916,Melanogenesis
+D12301,Adagrasib,3845,KRAS,hsa05161,Hepatitis B
+D12301,Adagrasib,3845,KRAS,hsa05165,Human papillomavirus infection
+D12301,Adagrasib,3845,KRAS,hsa05167,Kaposi sarcoma-associated herpesvirus infection
+D12301,Adagrasib,3845,KRAS,hsa05170,Human immunodeficiency virus 1 infection
+D12301,Adagrasib,3845,KRAS,hsa05200,Pathways in cancer
+D12301,Adagrasib,3845,KRAS,hsa05205,Proteoglycans in cancer
+D12301,Adagrasib,3845,KRAS,hsa05215,Prostate cancer
+D12301,Adagrasib,3845,KRAS,hsa05219,Bladder cancer
+D12301,Adagrasib,3845,KRAS,hsa05221,Acute myeloid leukemia
+D12301,Adagrasib,3845,KRAS,hsa05224,Breast cancer
+D12301,Adagrasib,3845,KRAS,hsa05225,Hepatocellular carcinoma
+D12301,Adagrasib,3845,KRAS,hsa05226,Gastric cancer
+D12301,Adagrasib,3845,KRAS,hsa05231,Choline metabolism in cancer
+D12301,Adagrasib,3845,KRAS,hsa05235,PD-L1 expression and PD-1 checkpoint pathway in cancer
+D12364,Taletrectinib adipate,4914,NTRK1,hsa01100,Metabolic pathways
+D12364,Taletrectinib adipate,4914,NTRK1,hsa04010,MAPK signaling pathway
+D12364,Taletrectinib adipate,4914,NTRK1,hsa04020,Calcium signaling pathway
+D12364,Taletrectinib adipate,4914,NTRK1,hsa04151,PI3K-Akt signaling pathway
+D12364,Taletrectinib adipate,4914,NTRK1,hsa05200,Pathways in cancer
+D12364,Taletrectinib adipate,4915,NTRK2,hsa01100,Metabolic pathways
+D12364,Taletrectinib adipate,4915,NTRK2,hsa04010,MAPK signaling pathway
+D12364,Taletrectinib adipate,4915,NTRK2,hsa04020,Calcium signaling pathway
+D12364,Taletrectinib adipate,4915,NTRK2,hsa04151,PI3K-Akt signaling pathway
+D12364,Taletrectinib adipate,4916,NTRK3,hsa04020,Calcium signaling pathway
+D12364,Taletrectinib adipate,6098,ROS,,
+D12506,Sunvozertinib,1956,EGFR,hsa04010,MAPK signaling pathway
+D12506,Sunvozertinib,1956,EGFR,hsa04020,Calcium signaling pathway
+D12506,Sunvozertinib,1956,EGFR,hsa04151,PI3K-Akt signaling pathway
+D12506,Sunvozertinib,1956,EGFR,hsa04510,Focal adhesion
+D12506,Sunvozertinib,1956,EGFR,hsa04630,JAK-STAT signaling pathway
+D12506,Sunvozertinib,1956,EGFR,hsa04912,GnRH signaling pathway
+D12506,Sunvozertinib,1956,EGFR,hsa04928,"Parathyroid hormone synthesis, secretion and action"
+D12506,Sunvozertinib,1956,EGFR,hsa04934,Cushing syndrome
+D12506,Sunvozertinib,1956,EGFR,hsa05120,Epithelial cell signaling in Helicobacter pylori infection
+D12506,Sunvozertinib,1956,EGFR,hsa05165,Human papillomavirus infection
+D12506,Sunvozertinib,1956,EGFR,hsa05171,Coronavirus disease - COVID-19
+D12506,Sunvozertinib,1956,EGFR,hsa05200,Pathways in cancer
+D12506,Sunvozertinib,1956,EGFR,hsa05205,Proteoglycans in cancer
+D12506,Sunvozertinib,1956,EGFR,hsa05215,Prostate cancer
+D12506,Sunvozertinib,1956,EGFR,hsa05219,Bladder cancer
+D12506,Sunvozertinib,1956,EGFR,hsa05224,Breast cancer
+D12506,Sunvozertinib,1956,EGFR,hsa05225,Hepatocellular carcinoma
+D12506,Sunvozertinib,1956,EGFR,hsa05226,Gastric cancer
+D12506,Sunvozertinib,1956,EGFR,hsa05231,Choline metabolism in cancer
+D12506,Sunvozertinib,1956,EGFR,hsa05235,PD-L1 expression and PD-1 checkpoint pathway in cancer
+D12879,Zongertinib,2064,ERBB2,hsa01100,Metabolic pathways
+D12879,Zongertinib,2064,ERBB2,hsa04010,MAPK signaling pathway
+D12879,Zongertinib,2064,ERBB2,hsa04020,Calcium signaling pathway
+D12879,Zongertinib,2064,ERBB2,hsa04151,PI3K-Akt signaling pathway
+D12879,Zongertinib,2064,ERBB2,hsa04510,Focal adhesion
+D12879,Zongertinib,2064,ERBB2,hsa05200,Pathways in cancer
+D12879,Zongertinib,2064,ERBB2,hsa05205,Proteoglycans in cancer
+D12879,Zongertinib,2064,ERBB2,hsa05215,Prostate cancer
+D12879,Zongertinib,2064,ERBB2,hsa05219,Bladder cancer
+D12879,Zongertinib,2064,ERBB2,hsa05224,Breast cancer
+D12879,Zongertinib,2064,ERBB2,hsa05226,Gastric cancer
+D13147,Pemetrexed dipotassium heptahydrate,1719,DHFR,hsa01100,Metabolic pathways
+D13147,Pemetrexed dipotassium heptahydrate,2618,GART,,
+D13147,Pemetrexed dipotassium heptahydrate,7298,TYMS,hsa00240,Pyrimidine metabolism
+D13168,Pembrolizumab and berahyaluronidase alfa,5133,PDCD1,hsa04660,T cell receptor signaling pathway
+D13168,Pembrolizumab and berahyaluronidase alfa,5133,PDCD1,hsa05235,PD-L1 expression and PD-1 checkpoint pathway in cancer

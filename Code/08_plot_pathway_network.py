@@ -12,6 +12,11 @@ import numpy as np
 import pandas as pd
 from matplotlib.collections import LineCollection
 
+# 基于脚本位置计算路径
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_DIR = os.path.dirname(SCRIPT_DIR)
+DATA_08_DIR = os.path.join(PROJECT_DIR, "data", "08")
+
 # Typography
 plt.rcParams["font.family"] = "Arial"
 plt.rcParams["font.sans-serif"] = ["Arial"]
@@ -373,10 +378,10 @@ def draw_network(g: nx.Graph, types: Dict[str, str], outdir: str, top_pathways: 
 def main() -> None:
 	parser = argparse.ArgumentParser(description="Generate pathway network with optional top-K highlighting")
 	parser.add_argument("--top_k", type=int, default=None, help="Highlight top-K pathways from rank.csv")
-	parser.add_argument("--rank_csv", type=str, default="../Data/output/manifest_results.csv", help="Path to rank CSV file")
-	parser.add_argument("--rel_csv", type=str, default="../Data/kegg_pathway_relations_summary.csv", help="Path to relations CSV")
-	parser.add_argument("--type_txt", type=str, default="../Data/pathway_types.txt", help="Path to types file")
-	parser.add_argument("--outdir", type=str, default="../Data/output/pathway_network", help="Output directory")
+	parser.add_argument("--rank_csv", type=str, default=os.path.join(DATA_08_DIR, "rank.csv"), help="Path to rank CSV file")
+	parser.add_argument("--rel_csv", type=str, default=os.path.join(DATA_08_DIR, "kegg_pathway_relations_summary.csv"), help="Path to relations CSV")
+	parser.add_argument("--type_txt", type=str, default=os.path.join(DATA_08_DIR, "pathway_types.txt"), help="Path to types file")
+	parser.add_argument("--outdir", type=str, default=os.path.join(DATA_08_DIR, "output"), help="Output directory")
 	args = parser.parse_args()
 	
 	relations = load_relations(args.rel_csv)

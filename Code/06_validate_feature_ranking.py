@@ -13,13 +13,24 @@ import os
 import random
 warnings.filterwarnings('ignore')
 
+# 基于脚本位置计算路径
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_DIR = os.path.dirname(SCRIPT_DIR)
+DATA_05_DIR = os.path.join(PROJECT_DIR, "data", "05")
+
+# ============ 配置 ============
+CANCER_TYPE = "LUAD"
+STATE_A = 1
+STATE_B = 2
+# ==============================
+
 # 设置matplotlib字体，避免中文显示问题
 plt.rcParams['font.sans-serif'] = ['DejaVu Sans', 'SimHei', 'Arial Unicode MS']
 plt.rcParams['axes.unicode_minus'] = False
 
 def create_result_directory():
     """创建结果保存目录"""
-    result_dir = '../Data/output/rank_result'
+    result_dir = os.path.join(DATA_05_DIR, f'rank_result_{CANCER_TYPE}_state{STATE_A}_vs_state{STATE_B}')
     if not os.path.exists(result_dir):
         os.makedirs(result_dir)
         print(f"创建结果目录: {result_dir}")
@@ -27,31 +38,32 @@ def create_result_directory():
 
 def load_data():
     """加载数据并合并为分类任务格式"""
-    # 加载两类样本数据（相对路径，相对于Code目录）
-    df1 = pd.read_csv('../Data/feature_selection/LUAD_1.csv', index_col=0)
-    df2 = pd.read_csv('../Data/feature_selection/LUAD_2.csv', index_col=0)
+    feature_dir = os.path.join(DATA_05_DIR, 'feature_selection')
+    df1 = pd.read_csv(os.path.join(feature_dir, f'{CANCER_TYPE}_state_{STATE_A}.csv'), index_col=0)
+    df2 = pd.read_csv(os.path.join(feature_dir, f'{CANCER_TYPE}_state_{STATE_B}.csv'), index_col=0)
     
-    # 合并数据
     X_combined = np.vstack([df1.values, df2.values])
     y_combined = np.hstack([np.zeros(len(df1)), np.ones(len(df2))])
     
     feature_names = df1.columns.tolist()
     
-    print(f"数据加载完成:")
+    print(f"数据加载完成 ({CANCER_TYPE} State {STATE_A} vs State {STATE_B}):")
     print(f"  - 总样本数: {len(X_combined)}")
     print(f"  - 特征数: {len(feature_names)}")
-    print(f"  - 类别0样本数: {np.sum(y_combined == 0)}")
-    print(f"  - 类别1样本数: {np.sum(y_combined == 1)}")
+    print(f"  - State {STATE_A} 样本数: {np.sum(y_combined == 0)}")
+    print(f"  - State {STATE_B} 样本数: {np.sum(y_combined == 1)}")
     
     return X_combined, y_combined, feature_names
 
-def load_feature_ranking(ranking_file='../Data/output/manifest_results.csv'):
+def load_feature_ranking(ranking_file=None):
+    if ranking_file is None:
+        ranking_file = os.path.join(DATA_05_DIR, f'{CANCER_TYPE}_manifest_state{STATE_A}_vs_state{STATE_B}.csv')
     """加载ELVES特征排名结果"""
     try:
         ranking_df = pd.read_csv(ranking_file)
         feature_order = ranking_df['Feature_Index'].values
         feature_names = ranking_df['Feature_Name'].values
-        scores = ranking_df['ELVES_Score'].values
+        scores = ranking_df['ManiFeSt_Score'].values
         
         print(f"特征排名加载完成:")
         print(f"  - 排名文件: {ranking_file}")

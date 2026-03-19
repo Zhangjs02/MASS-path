@@ -1,20 +1,23 @@
-# sudo rstudio-server start
-.libPaths(c("/home/hth/R/x86_64-pc-linux-gnu-library/4.4", .libPaths()))
+# 基于脚本位置计算路径
+args <- commandArgs(trailingOnly = FALSE)
+script_path <- sub("--file=", "", args[grep("--file=", args)])
+if (length(script_path) == 0) script_path <- "."
+SCRIPT_DIR <- dirname(normalizePath(script_path))
+PROJECT_DIR <- dirname(SCRIPT_DIR)
+DATA_04_DIR <- file.path(PROJECT_DIR, "data", "04")
+
 options(stringsAsFactors = FALSE)
 library(monocle)
 library(dplyr)
 library(data.table)
 library(tibble)
 
-# 设置工作目录为Data目录（相对于Code目录）
-setwd("../Data")
-
 cat("正在读取数据...\n")
-LUAD_data = fread("LUAD_intersection_genes.csv", header = TRUE)
+LUAD_data = fread(file.path(DATA_04_DIR, "LUAD_intersection_genes.csv"), header = TRUE)
 
 # 读取临床信息文件
 cat("正在读取临床信息...\n")
-LUAD_cli = fread("LUAD_clinical.csv")
+LUAD_cli = fread(file.path(DATA_04_DIR, "LUAD_clinical.csv"))
 
 # 提取tissue_type信息
 tissue_type_data = LUAD_cli[, .(sample, `tissue_type.samples`)]
@@ -82,17 +85,17 @@ cat("正在排序细胞...\n")
 cds <- orderCells(cds)
 
 cat("正在生成图表...\n")
-ggsave("trajectory_by_state.png", width=5, height=5, plot = plot_cell_trajectory(cds, color_by="State"))
-ggsave("trajectory_by_state_faceted.png",
+ggsave(file.path(DATA_04_DIR, "trajectory_by_state.png"), width=5, height=5, plot = plot_cell_trajectory(cds, color_by="State"))
+ggsave(file.path(DATA_04_DIR, "trajectory_by_state_faceted.png"),
        width=3*ceiling(length(base::unique(pData(cds)$State))/ceiling(sqrt(length(base::unique(pData(cds)$State))))), height=3*ceiling(sqrt(length(base::unique(pData(cds)$State)))),
        plot = plot_cell_trajectory(cds, color_by="State") + facet_wrap(~State, nrow=ceiling(sqrt(length(base::unique(pData(cds)$State)))), axes="all"))
-ggsave("trajectory_by_pseudotime.png", width=5, height=5, plot = plot_cell_trajectory(cds, color_by="Pseudotime"))
-ggsave("trajectory_by_stage.png", width=5, height=5, plot = plot_cell_trajectory(cds, color_by="seurat_annotations"))
-ggsave("trajectory_by_cluster.png", width=5, height=5, plot = plot_cell_trajectory(cds, color_by="cluster"))
+ggsave(file.path(DATA_04_DIR, "trajectory_by_pseudotime.png"), width=5, height=5, plot = plot_cell_trajectory(cds, color_by="Pseudotime"))
+ggsave(file.path(DATA_04_DIR, "trajectory_by_stage.png"), width=5, height=5, plot = plot_cell_trajectory(cds, color_by="seurat_annotations"))
+ggsave(file.path(DATA_04_DIR, "trajectory_by_cluster.png"), width=5, height=5, plot = plot_cell_trajectory(cds, color_by="cluster"))
 
 # 生成基于tissue_type的轨迹图
 cat("正在生成tissue_type轨迹图...\n")
-ggsave("trajectory_by_tissue_type.png", width=5, height=5, plot = plot_cell_trajectory(cds, color_by="tissue_type"))
+ggsave(file.path(DATA_04_DIR, "trajectory_by_tissue_type.png"), width=5, height=5, plot = plot_cell_trajectory(cds, color_by="tissue_type"))
 
 cat("正在生成pseudotime结果文件...\n")
 # 提取pseudotime数据
@@ -112,14 +115,14 @@ result_df <- data.frame(
 result_df <- result_df[order(result_df$Pseudotime), ]
 
 # 保存为CSV文件
-write.csv(result_df, "pseudotime_results.csv", row.names = FALSE)
+write.csv(result_df, file.path(DATA_04_DIR, "pseudotime_results.csv"), row.names = FALSE)
 
 cat("正在保存CellDataSet对象...\n")
 # 保存完整的CellDataSet对象
-saveRDS(cds, "monocle_celldataset.rds")
+saveRDS(cds, file.path(DATA_04_DIR, "monocle_celldataset.rds"))
 
 # 也可以保存为RData格式
-save(cds, file = "monocle_celldataset.RData")
+save(cds, file = file.path(DATA_04_DIR, "monocle_celldataset.RData"))
 
 cat("分析完成！生成的图片文件：\n")
 cat("- trajectory_by_state.png\n")

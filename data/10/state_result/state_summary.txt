@@ -1,0 +1,22 @@
+LUAD数据按State分割汇总
+==================================================
+
+原始LUAD数据: 485 样本 x 363 特征
+Pseudotime数据: 485 样本
+
+各State分布:
+  State 1: 44 样本 -> LUAD_state_1.csv
+  State 2: 88 样本 -> LUAD_state_2.csv
+  State 3: 57 样本 -> LUAD_state_3.csv
+  State 4: 75 样本 -> LUAD_state_4.csv
+  State 5: 18 样本 -> LUAD_state_5.csv
+  State 6: 120 样本 -> LUAD_state_6.csv
+  State 7: 83 样本 -> LUAD_state_7.csv
+
+总计: 485 样本
+生成文件数: 7 个
+
+文件格式: 与原始LUAD.csv完全一致
+- 第一列: 样本ID（列名为空）
+- 其余列: 特征值 (hsa开头的基因通路)
+- 所有值都用双引号包围

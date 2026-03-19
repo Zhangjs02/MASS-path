@@ -15,6 +15,11 @@ import logging
 
 print("通路网络MCE计算程序")
 
+# 基于脚本位置计算路径，确保从任意目录运行都能正确找到文件
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_DIR = os.path.dirname(SCRIPT_DIR)
+DATA_01_DIR = os.path.join(PROJECT_DIR, "data", "01")
+
 # 配置日志
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -530,11 +535,11 @@ def main():
     print("通路网络MCE计算程序 (并行优化版)")
     print("=" * 60)
     
-    # 配置路径（相对路径，相对于Code目录）
-    sample_vectors_base_dir = "../Data/Sample_MCE_Vectors"
-    pathways_dir = "../Data/Final_pathway"
-    output_dir = "../Data/Pathway_MCE_Results"
-    sample_mce_file = "../Data/LUAD_MCE.csv"
+    # 基于脚本位置的相对路径
+    sample_vectors_base_dir = os.path.join(DATA_01_DIR, "Sample_MCE_Vectors")
+    pathways_dir = os.path.join(DATA_01_DIR, "Final_pathway")
+    output_dir = os.path.join(DATA_01_DIR, "Pathway_MCE_Results")
+    sample_mce_file = os.path.join(DATA_01_DIR, "Pathway_MCE", "LUAD_MCE.csv")
     
     # 加载样本MCE数据
     print("加载样本MCE汇总数据...")

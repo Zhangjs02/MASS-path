@@ -3,6 +3,14 @@
 # 设置CRAN镜像
 options(repos = c(CRAN = "https://cran.rstudio.com/"))
 
+# 基于脚本位置计算路径
+args <- commandArgs(trailingOnly = FALSE)
+script_path <- sub("--file=", "", args[grep("--file=", args)])
+if (length(script_path) == 0) script_path <- "."
+SCRIPT_DIR <- dirname(normalizePath(script_path))
+PROJECT_DIR <- dirname(SCRIPT_DIR)
+DATA_07_DIR <- file.path(PROJECT_DIR, "data", "07")
+
 # 设置全局字体为Arial
 library(grDevices)
 if (.Platform$OS.type == "windows") {
@@ -31,9 +39,8 @@ if (!require(dplyr)) {
     library(dplyr)
 }
 
-# 读取Excel文件（相对路径，相对于Code目录）
 cat("正在读取Excel文件...\n")
-data <- read_excel("../Data/feature_indices_comparison.xlsx")
+data <- read_excel(file.path(DATA_07_DIR, "feature_indices_comparison.xlsx"))
 
 # 查看数据结构
 cat("数据维度:", dim(data), "\n")
@@ -139,7 +146,7 @@ set_colors <- c(
 par(family = "Arial", font = 2)  # font = 2 表示加粗
 
 # 设置图形参数 - 增大上方柱状图高度
-png("../Data/output/upset_plot_R.png", width = 1400, height = 1000, res = 150, family = "Arial")
+png(file.path(DATA_07_DIR, "upset_plot_R.png"), width = 1400, height = 1000, res = 150, family = "Arial")
 
 upset(upset_data, 
       sets = desired_order,
@@ -214,7 +221,7 @@ stats_df <- data.frame(
 )
 
 stats_df <- stats_df[order(stats_df$Size, decreasing = TRUE), ]
-write.csv(stats_df, "../Data/output/upset_statistics_R.csv", row.names = FALSE)
+write.csv(stats_df, file.path(DATA_07_DIR, "upset_statistics_R.csv"), row.names = FALSE)
 
 cat("统计信息已保存为: ../Data/output/upset_statistics_R.csv\n")
 
@@ -228,7 +235,7 @@ cat("\n正在创建简化版UpSet图...\n")
 # 设置字体加粗
 par(family = "Arial", font = 2)  # font = 2 表示加粗
 
-png("../Data/output/upset_plot_simplified_R.png", width = 1400, height = 1000, res = 150, family = "Arial")
+png(file.path(DATA_07_DIR, "upset_plot_simplified_R.png"), width = 1400, height = 1000, res = 150, family = "Arial")
 
 upset(upset_data, 
       sets = desired_order,

@@ -18,11 +18,11 @@ from matplotlib.patches import FancyBboxPatch
 import matplotlib.patches as mpatches
 
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-DATA_DIR = BASE_DIR / "Data"
-MAPPING_FILE = DATA_DIR / "H00014_drug_gene_pathway_mapping_merged.csv"
-OUTPUT_DIR = DATA_DIR / "output"
-OUTPUT_PNG = OUTPUT_DIR / "tripartite_pathway_gene_drug.png"
+SCRIPT_DIR = Path(__file__).resolve().parent
+PROJECT_DIR = SCRIPT_DIR.parent
+DATA_09_DIR = PROJECT_DIR / "data" / "09"
+MAPPING_FILE = DATA_09_DIR / "H00014_drug_gene_pathway_mapping_merged.csv"
+OUTPUT_PNG = DATA_09_DIR / "tripartite_pathway_gene_drug.png"
 
 plt.rcParams["font.family"] = "Arial"
 
@@ -301,7 +301,7 @@ def create_tripartite_diagram(data):
     ax.axis("off")
     
     plt.tight_layout()
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    DATA_09_DIR.mkdir(parents=True, exist_ok=True)
     fig.savefig(OUTPUT_PNG, dpi=300, bbox_inches="tight")
     plt.close(fig)
     
