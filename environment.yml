@@ -1,0 +1,203 @@
+# ============================================================
+# MASS Project - Unified Environment
+# ============================================================
+# Covers ALL scripts in MASS-path/Code/ and Code/:
+#
+#   Python scripts:
+#     01_build_strong_gpu.py      (torch, networkx, tqdm)
+#     01b_compute_sample_vectors.py
+#     02_pathway_mce_calculator.py
+#     05_run_manifest.py          (cupy, cuml - GPU only)
+#     05_run_manifest_LUSC.py     (CPU fallback available)
+#     06_validate_feature_ranking.py
+#     06_validate_feature_ranking_LUSC.py
+#     08_plot_pathway_network.py
+#     09_create_tripartite_from_mapping.py
+#     10_supervised_analysis.py   (umap-learn)
+#     run_all_pairs_LUSC.py
+#     run_manifest_cpu.py
+#     ManiFeSt.py                 (local module, CPU)
+#     ManiFeSt_gpu.py             (local module, GPU)
+#     validate_feature_ranking.py
+#
+#   R scripts:
+#     03_heatmap_script.R
+#     04_nsx_code.R / 04_nsx_code_LUSC.R
+#     07_create_upset_plot.R / 07_create_upset_plot_LUSC.R
+#     11_stage_survival_50_50_fixed.R
+#     heatmap_LUSC_12543.R
+#
+# ============================================================
+# Setup:
+#   Step 1: conda env create -f environment.yml
+#   Step 2: conda activate mass
+#   Step 3: Rscript install_r_packages.R
+#
+# For GPU scripts (01, 05 with cupy/cuml), see the
+# [GPU-only] section at the bottom.
+# ============================================================
+
+name: mass
+channels:
+  - conda-forge
+  - pytorch
+  - defaults
+
+dependencies:
+  # ========== Python ==========
+  - python=3.10
+
+  # --- Core scientific stack ---
+  - numpy=1.26.4
+  - pandas>=2.2
+  - scipy>=1.15
+
+  # --- Graph / network ---
+  - networkx>=3.0
+
+  # --- Machine learning ---
+  - scikit-learn>=1.5
+
+  # --- Visualization ---
+  - matplotlib>=3.8
+  - seaborn>=0.13
+
+  # --- Dimensionality reduction ---
+  - umap-learn>=0.5
+
+  # --- Progress bar ---
+  - tqdm>=4.60
+
+  # --- PyTorch (CPU version, for 01_build_strong_gpu.py) ---
+  - pytorch>=2.0
+  - cpuonly                       # remove this line if using GPU
+
+  # --- I/O ---
+  - openpyxl>=3.1
+
+  # ========== R ==========
+  - r-base=4.4.3
+
+  # --- Build tools ---
+  - compilers
+  - make
+
+  # --- System libraries ---
+  - cairo
+  - curl
+  - fontconfig
+  - harfbuzz
+  - icu
+  - libxml2
+  - openssl
+  - pango
+  - pcre2
+  - zlib
+  - zstd
+
+  # --- R core (via conda-forge) ---
+  - r-cli=3.6.5
+  - r-rlang=1.1.7
+  - r-glue=1.8.0
+  - r-lifecycle=1.0.5
+  - r-r6=2.6.1
+  - r-magrittr=2.0.4
+  - r-crayon=1.5.3
+  - r-withr=3.0.2
+  - r-cpp11=0.5.3
+
+  # --- R data manipulation ---
+  - r-dplyr=1.2.0               # 03, 04, 07, 11
+  - r-tibble=3.3.1              # 04
+  - r-data.table=1.17.8         # 04
+  - r-tidyselect=1.2.1
+  - r-vctrs=0.7.1
+  - r-generics=0.1.4
+  - r-pillar=1.11.1
+
+  # --- R visualization ---
+  - r-ggplot2=4.0.2             # 04, 11
+  - r-scales=1.4.0
+  - r-colorspace=2.1_2
+  - r-munsell=0.5.1
+  - r-farver=2.1.2
+  - r-labeling=0.4.3
+  - r-isoband=0.3.0
+  - r-gtable=0.3.6
+  - r-viridislite=0.4.3
+  - r-s7=0.2.1
+  - r-rcolorbrewer=1.1_3        # 11
+
+  # --- R matrix & numerical ---
+  - r-matrix=1.7_4
+  - r-lattice=0.22_9
+  - r-mass=7.3_65
+
+  # --- R I/O ---
+  - r-readr=2.2.0               # 03
+
+  # ============================================================
+  # R packages installed via Bioconductor / CRAN
+  # (run: Rscript install_r_packages.R after env creation)
+  # ============================================================
+  #
+  # --- Bioconductor ---
+  #   BiocManager        1.30.27
+  #   Biobase            2.66.0    (monocle dependency)
+  #   BiocGenerics       0.52.0
+  #   S4Vectors          0.44.0
+  #   IRanges            2.40.1
+  #   graph              1.84.1
+  #   RBGL               1.82.0
+  #   limma              3.62.2
+  #   ComplexHeatmap     2.22.0    -> 03_heatmap_script.R
+  #   monocle            2.9.0     -> 04_nsx_code.R
+  #   HSMMSingleCell     1.26.0
+  #
+  # --- CRAN: monocle dependency chain ---
+  #   DDRTree, VGAM, irlba, igraph, densityClust,
+  #   fastICA, FNN, RANN, Rtsne, combinat, docopt,
+  #   qlcMatrix, slam, sparsesvd, leidenbase,
+  #   proxy, matrixStats, statmod
+  #
+  # --- CRAN: visualization ---
+  #   circlize           0.4.17    -> 03_heatmap_script.R
+  #   UpSetR             1.4.0     -> 07_create_upset_plot.R
+  #   pheatmap           1.0.13
+  #   ggrepel            0.9.6
+  #   gridExtra          2.3
+  #   viridis            0.6.5
+  #   reshape2           1.4.5
+  #   shape, GetoptLong, GlobalOptions, clue, png
+  #   showtext           (optional) -> 03 (Arial font support)
+  #
+  # --- CRAN: I/O ---
+  #   readxl             (latest)  -> 07_create_upset_plot.R
+  #   cellranger         1.1.0
+  #
+  # --- CRAN: survival analysis ---
+  #   survival           (latest)  -> 11_stage_survival.R
+  #   survminer          (latest)  -> 11_stage_survival.R
+  #
+  # --- CRAN: other ---
+  #   Rcpp, RcppEigen, BH, RCurl, XML, rjson,
+  #   digest, stringi, stringr,
+  #   doParallel, foreach, plyr, remotes
+  #
+  # ============================================================
+  # [GPU-only] For scripts that require NVIDIA GPU:
+  #   05_run_manifest.py      -> cupy, cuml
+  #   ManiFeSt_gpu.py         -> cupy, cuml
+  #   01_build_strong_gpu.py  -> pytorch (GPU version)
+  #
+  # To enable GPU support, replace the CPU PyTorch above and
+  # install RAPIDS (cupy + cuml) separately:
+  #
+  #   conda install -c rapidsai -c nvidia cupy cuml
+  #   # or for PyTorch GPU:
+  #   conda install pytorch pytorch-cuda=12.4 -c pytorch -c nvidia
+  #
+  # CPU alternatives are available:
+  #   05_run_manifest_LUSC.py / run_manifest_cpu.py use ManiFeSt.py
+  #   (CPU, scikit-learn based, no cupy/cuml needed)
+  # ============================================================
